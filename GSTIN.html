@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>GSTIN Verification</title>
+</head>
+<body>
+    <nav class="navbar h-nav-resp">
+        <div class = "logo v-class-resp options" id="disp"><img src="img/logo.png" alt = "logo"></div>
+        <a class = "v-class-resp options" href="#Seller-Registeration">Login/Signup</a>
+        <div class = "logo v-class-resp options" id="disp-opp"><img src="img/logo.png" alt = "logo"></div>
+        <a class = "v-class-resp options" href="#Callback">Request A Callback</a>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>  
+    <!-- <div class="alert alert-{{col}} text-center" style="margin: 0% 5%;">
+        <strong></strong>
+    </div> -->
+    <section class="background SingleSec">
+        <div class="row film" style="margin:0px;">
+            <div class="col-12 col-md-1"></div>
+            
+            <div class="col-12 col-md-5 register">
+                <form class=" text-center" method="POST" action="/verify/" id="form-col">
+                    <h2 class="text-capitalize text-center" id="form-head">
+                        Verify your GSTIN</h2>
+                    <div class="form-group"><input class="form-control"  style="background: rgb(256,256,256,0.5); border: solid 1px #6c757d;"type="text" required name="gst" placeholder="GST No.">
+                    </div>
+                    
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit"
+                            style="background: #4f4f4f; border-color: #4f4f4f;">Continue</button></div>
+                    <a class="text-capitalize already" href="seller_homepage.html" style="color:#4f4f4f; float: left;text-decoration: underline;">&#60; Back </a>
+                </form>
+            </div>
+            <div class="col-12 col-md-5" id = "content-col">
+                <p class="text-para-big" id = "content-head" >Congratulations!</p> 
+                <p style="font-size: 1.2rem;"> You're a step closer to selling on India's first Home Interiors & Construction Material marketplace. Reach out to consumers across the country and grow your business with us from your office. 
+                    Please enter your GSTIN to move forward.
+                </p>
+                <hr class="custom-black-bold">
+                <div style="font-size: 1.2rem; font-weight: 500; padding-top: 5px;">Frequently Asked Questions</div>
+                <div class="accordion accordion-flush new" id="accordionFlushExample">
+                    <div class="accordion-item ">
+                      <h2 class="accordion-header" id="flush-heading1">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapse1"
+                          aria-expanded="false"
+                          aria-controls="flush-collapse1"
+                          style="font-size: 1.2rem;text-align: left;"
+                        >
+                        Why do I need to give GSTIN?
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapse1"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-heading1"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body" style="font-size: 1.1rem;text-align: left;">
+                            As per government regulations, all sellers operating on an e-commerce platform are mandated to have a Goods and Services Taxpayer Identification number (GSTIN)
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading2">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapse2"
+                          aria-expanded="false"
+                          aria-controls="flush-collapse2"
+                          style="font-size: 1.2rem;text-align: left;"
+                        >
+                        What if I do not have a GSTIN?
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapse2"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-heading2"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body" style="font-size: 1.1rem;text-align: left;">
+                            As per government regulations, you will need GSTIN to sell online and hence on Seventh Square.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-heading3">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapse3"
+                          aria-expanded="false"
+                          aria-controls="flush-collapse3"
+                          style="font-size: 1.2rem;text-align: left;"
+                        >Can I create an account with composite GSTIN?
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapse3"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-heading3"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                        <div class="accordion-body" style="font-size: 1.1rem;text-align: left;">
+                            As per government regulations, composite GSTIN cannot be used to sell on e-commerce platforms.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-md-1"></div>
+        </div>
+    </section>
+    
+        
+    <footer class="foter-1 text-center"
+    style="display: none;  padding: 20px;background: #1b1b1b;">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Know Us
+        </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" href="/about/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">About</a>
+            <a class="btn btn-secondary text-left" role="button" href="/careers/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Careers</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Media</a>
+            <a class="btn btn-secondary text-left" role="button" href="/blog/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Blogs</a>
+            <a class="btn btn-secondary text-left" role="button" href="/forum/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Forum</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Help
+        </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" href="/faqs/general/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">FAQs</a>
+            <a class="btn btn-secondary text-left" role="button" href="/policy/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Policies</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Sitemap</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Shipping & Returns</a>
+            <a class="btn btn-secondary text-left" role="button" href="/terms/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Terms & Conditions</a>
+            <a class="btn btn-secondary text-left" role="button" href="/contact/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Contact Us</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Services
+        </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Advertising</a>
+            <a class="btn btn-secondary text-left" role="button" href="/corporate/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Bulk Order</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Enquiry</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consulting</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Merchant Assistance</a>
+            <a class="btn btn-secondary text-left" role="button" href="/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Seller Registation</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Partner With Us
+        </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Architect</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Builder</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Contractor</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consultant</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Designer</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Product Seller</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="row" style="margin: 10px;">
+    <div class="col"><a href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img
+            class="img-fluid" src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
+    <div class="col"><a href="https://www.instagram.com/seventhsquare/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/instagram.png" /></a></div>
+    <div class="col"><a href="https://www.linkedin.com/company/seventh-square" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/linkedin.png" /></a></div>
+    <div class="col"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
+    <div class="col"><a href="https://twitter.com/SeventhSq/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
+    </div>
+    </footer>
+    <footer class="foter-2"
+    style="padding-top: 50px;padding-bottom: 30px;padding-right: 100px;background: #1b1b1b;padding-left: 100px;">
+    <div class="row">
+    <div class="col-sm-12 col-md-3 footer-navigation" style="padding-right: 20px;">
+        <h3><a href="/"><img class="img-fluid imgage-1" src="img/logo.png"
+            style="padding-left: 30px;padding-right: 30px;"></a></h3>
+        <h6 style="margin-bottom: 12px;padding-top: 10px;font-size: 15px;color:white;">
+        <strong>Registered Office</strong>
+        </h6>
+        <p style="font-size: 13px;color: #999;font-weight: normal;"> 75, Jhotwara Industrial
+        Area, Jaipur, Rajasthan-302012</p>
+        <div class="row" style="margin: 10px;">
+        <div class="col" style="padding: 0px 5px; padding-left: 0px;"><a
+            href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img class="img-fluid"
+                src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.instagram.com/seventhsquare/"
+            target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/instagram.png" /></a>
+        </div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.linkedin.com/company/seventh-square"
+            target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/linkedin.png" /></a>
+        </div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img
+                class="img-fluid" src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://twitter.com/SeventhSq/" target='_blank'><img
+                class="img-fluid" src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px; color:white;"><strong>KNOW US</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/about/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">About
+                us</a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/careers/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Careers<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Media<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/blog/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Blogs<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/forum/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Forum<br></a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>HELP</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/faqs/general/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">FAQs</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/policy/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Policies</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Sitemap<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Shipping
+                & Returns<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/terms/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Terms &
+                Conditions<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/contact/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Contact Us<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>SERVICES</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Advertising</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/corporate/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Bulk
+                Order<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Enquiry<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Consulting<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Merchant
+                Assistance<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Seller
+                Registation<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>PARTNER WITH US</strong>
+        </h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Architect</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Builder</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Contractor<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Consultant<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Designer<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Product
+                Seller<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    </footer>
+    <div style="padding: 12px;background: #01011e;color: rgb(255,255,255);">
+    <div class="row">
+    <div class="col-sm-12 col-md-6 col-xl-8" style="padding-top: 5px;padding-bottom: 5px;text-align: center;">
+        <span style="font-size: 14px;">Copyright © 2021<a href="#">&nbsp;</a>Seventh Square
+        Internet Pvt. Ltd.</span>
+    </div>
+    <div class="col-sm-12 col-md-6 col-xl-4 d-none d-md-block"
+        style="padding: 0px;text-align: center;border-left: 1px solid rgba(255,255,255,0.6) ;">
+        <div><img src="img/p.jpg" style="margin-top: 5px;"></div>
+    </div>
+    </div>
+    </div>
+
+    <script src="js/resp.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+</body>
+</html>
