@@ -15,8 +15,8 @@
 <body>
     <nav class="navbar h-nav-resp">
         <div class = "logo v-class-resp options" id="disp"><img src="img/logo.png" alt = "logo"></div>
-        <a class = "v-class-resp options" href="#Seller-Registeration">Login/Signup</a>
-        <div class = "logo v-class-resp options" id="disp-opp"><img src="img/logo.png" alt = "logo"></div>
+        <a class = "v-class-resp options" href="Seller_login.html">Login</a>
+        <div class = "logo v-class-resp options" id="disp-opp"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
         <a class = "v-class-resp options" href="#Callback">Request A Callback</a>
         <div class="burger">
             <div class="line"></div>
@@ -29,7 +29,7 @@
             <div class="col-12 col-md-1"></div>
             
             <div class="col-12 col-md-5 register">
-                <form class=" text-center" method="POST" action="/verify/" id="form-col">
+                <form class=" text-center" method="POST" action="/verify/" id="form-col-det" >
                     <h2 class="text-capitalize text-center" id="form-head">
                         Enter your details</h2>
                     <div class="form-group"><input class="form-control" type="text" name="name" required
@@ -84,17 +84,17 @@
                     </select></div>
                     
                     <div class="form-group"><a href ="Details.html" class="btn btn-primary btn-block" type="submit"
-                            style="background: #4f4f4f; border-color: #4f4f4f;">Submit</a></div>
+                            style="background: #000; border-color: #4f4f4f;">Submit</a></div>
                     <a class="text-capitalize already" href="GSTIN.html" style="color:#4f4f4f; float: left;text-decoration: underline;">&#60; Back </a>
                 </form>
             </div>
             <div class="col-12 col-md-5" id = "content-col">
                 <p class="text-para-big" id = "content-head" >You've reached the finish line!</p> 
-                <p style="font-size: 1.2rem;"> Tell us about youself and the company you represent, so we know who to address.</p> 
-                <p style="font-size: 1.2rem;"> Please use names mentioned in the official documents as these will help us in verification.
+                <p style="font-size: 1.1rem;"> Tell us about youself and the company you represent, so we know who to address.</p> 
+                <p style="font-size: 1.1rem;"> Please use names mentioned in the official documents as these will help us in verification.
                 </p>
                 <hr class="custom-black-bold">
-                <div style="font-size: 1.2rem; font-weight: 500; padding-top: 5px;">Frequently Asked Questions</div>
+                <div style="font-size: 1.1rem; font-weight: 500; padding-top: 5px;">Frequently Asked Questions</div>
                 <div class="accordion accordion-flush new" id="accordionFlushExample">
                     <div class="accordion-item ">
                       <h2 class="accordion-header" id="flush-heading1">
@@ -105,7 +105,7 @@
                           data-mdb-target="#flush-collapse1"
                           aria-expanded="false"
                           aria-controls="flush-collapse1"
-                          style="font-size: 1.2rem;text-align: left;"
+                          style="font-size: 1.1rem;text-align: left;"
                         >
                         Why should I provide in Company Name?
                         </button>

@@ -54,6 +54,11 @@ html{
     padding: 2.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
+.sec-small{
+    height:90vh;
+    padding: 2.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
 .box-main{
     display: flex;
     justify-content: center;
@@ -76,6 +81,18 @@ html{
 .film{
     background-color:rgb(255, 255, 255,0.7);
     height: 100%;
+}
+.film-small{
+    background-color:rgb(255, 255, 255,0.7);
+    height: 90%;
+    max-width: 70%;
+    margin: auto;
+}
+#login-pic{
+    margin: auto;
+}
+#form-style{
+    padding: 0px 30px 0px 0px;
 }
 .sqsingle{
     width: 50%;
@@ -197,23 +214,22 @@ html{
 .square{
     width: 40%;
     padding: 10px 20px;
-    margin: auto;
+    margin: 0 auto;
 }
 .text-head{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 6vh;   
-    font-weight: 400; 
-    padding: 0px 20px;   
+    font-weight: 400;   
 }
 .text-para{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;   
+    font-size: 28px;   
     font-weight: 300; 
     padding: 10px 0px;
 }
 .text-para-big{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 35px;   
+    font-size: 31px;   
     font-weight: 400;
     justify-content: center;
 }
@@ -300,8 +316,9 @@ opacity: 1;
     color: inherit;
     text-indent: 6px;
     height: 40px;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
 }
+
 #Mob-div{
     display: flex;
 }
@@ -326,6 +343,11 @@ opacity: 1;
     width: 70%;
     margin: auto;
 }
+#form-col-det{
+    padding: 6rem 0;
+    width: 70%;
+    margin: auto;
+}
 #content-col{
     padding: 2.2rem 0;
 }
@@ -337,8 +359,7 @@ opacity: 1;
 #form-head{
     letter-spacing: 1px;
     font-style: normal; 
-    font-weight: 400; 
-    padding: 0 2rem;
+    font-weight: 400;
 }
 
 .new .accordion-button:not(.collapsed) {
