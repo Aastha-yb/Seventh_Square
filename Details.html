@@ -10,13 +10,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>GSTIN Verification</title>
+    <title>Seller Details</title>
 </head>
 <body>
     <nav class="navbar h-nav-resp">
-        <div class = "logo v-class-resp options" id="disp"><img src="img/logo.png" alt = "logo"></div>
+        <div class = "logo v-class-resp options" id="disp"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
         <a class = "v-class-resp options" href="Seller_login.html">Login</a>
-        <div class = "logo v-class-resp options" id="disp-opp"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
+        <div class = "logo v-class-resp options" id="disp-opp"><a href="index.html"></a><img src="img/logo.png" alt = "logo"></a></div>
         <a class = "v-class-resp options" href="#Callback">Request A Callback</a>
         <div class="burger">
             <div class="line"></div>
@@ -29,7 +29,7 @@
             <div class="col-12 col-md-1"></div>
             
             <div class="col-12 col-md-5 register">
-                <form class=" text-center" method="POST" action="/verify/" id="form-col-det" >
+                <form class=" text-center" method="POST" action="Details.html" id="form-col-det" >
                     <h2 class="text-capitalize text-center" id="form-head">
                         Enter your details</h2>
                     <div class="form-group"><input class="form-control" type="text" name="name" required
@@ -83,8 +83,8 @@
                         <option value="Vishakapatnam">Vishakapatnam</option>
                     </select></div>
                     
-                    <div class="form-group"><a href ="Details.html" class="btn btn-primary btn-block" type="submit"
-                            style="background: #000; border-color: #4f4f4f;">Submit</a></div>
+                    <div class="form-group"><button href ="Seller_login.html" class="btn btn-primary btn-block" type="submit"
+                            style="background: #000; border-color: #4f4f4f;">Submit</button></div>
                     <a class="text-capitalize already" href="GSTIN.html" style="color:#4f4f4f; float: left;text-decoration: underline;">&#60; Back </a>
                 </form>
             </div>
