@@ -47,7 +47,7 @@ html{
     /* background-blend-mode: darken; */
 }
 .firstSection{
-    height: 77vh;
+    height: 72vh;
 }
 .SingleSec{
     height:100vh;
@@ -212,7 +212,7 @@ html{
     margin: auto;
 }
 .square{
-    width: 40%;
+    width: 30%;
     padding: 10px 20px;
     margin: 0 auto;
 }

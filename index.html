@@ -13,9 +13,9 @@
     <title>Seventh Square Seller</title>
 </head>
 <body>
-    <nav class="navbar h-nav-resp" style="position: sticky;">
+    <nav class="navbar h-nav-resp" style="position: sticky;justify-content: flex-start;">
             <div class = "logo v-class-resp options" id="disp"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
-            <a class = "v-class-resp options" href="Seller_login.html">Login</a>
+            <a class = "v-class-resp options" href="Seller_login.html">Existing Seller? Login</a>
             <div class = "logo v-class-resp options" id="disp-opp"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
             <a class = "v-class-resp options" href="#Callback">Request A Callback</a>
             <div class="burger">
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class = "box-bottom">
-            <p>Figure as per Industry Estimates for Home Interiors & Construction Industry</p>
+            <p style="margin-top: 1rem; margin-bottom: 0;">Figure as per Industry Estimates for Home Interiors & Construction Industry</p>
         </div>
         </div>
     </section>
@@ -46,7 +46,7 @@
         <div class = "inline">
             <div class = "square">
                 <p class = "text-head" style = "text-align: left;">Bigger & Better Clientele</p>
-                <p class="text-para">Reach Clients all over India. Sell to Builders
+                <p class="text-para-small">Reach Clients all over India. Sell to Builders
                     & Developers, Contractors & Construction
                     Firms, Architects, Institutions and
                     Individual Home Buyers from a single
@@ -55,7 +55,7 @@
             </div>
             <div class = "square">
                 <p class = "text-head" style = "text-align: right;">Customer Services</p>
-                <p class="text-para" style = "text-align: right;">Superior Services to clients such as One-stop shop
+                <p class="text-para-small" style = "text-align: right;">Superior Services to clients such as One-stop shop
                     for Building Materials & Home Interiors, Automatic
                     Invoicing & Tax Management, Delivery & Order
                     scheduling for bigger projects, third-party financing
@@ -66,7 +66,7 @@
         <div class = "inline">
             <div class = "square">
                 <p class = "text-head" style = "text-align: left;">Seventh Square Specialty</p>
-                <p class="text-para">Receive orders & quote updates on text,
+                <p class="text-para-small">Receive orders & quote updates on text,
                     whatsapp, email & call. Track payments in
                     your dashboard. Dedicated Relationship
                     Manager for all your doubts & queries;
@@ -75,7 +75,7 @@
             </div>
             <div class = "square">
                 <p class = "text-head" style = "text-align: right;">Lowest Fees</p>
-                <p class="text-para" style = "text-align: right;">5% Commission across all categories. No
+                <p class="text-para-small" style = "text-align: right;">5% Commission across all categories. No
                     added charges, so you can give customers
                     the best prices without lowering margins.</p>
                 <hr class="custom" style=" float: right;">
@@ -116,7 +116,7 @@
         <div class="heading">
             <p>Register as a Seller with Seventh Square</p>
         </div>
-        <div class="inline">
+        <div class="inline thirdSection">
             <div class="square">
                 <p class="text-para-small">Become a seller with us by filling this form.
                     To sell with Seventh Square, you need:</p>
@@ -128,21 +128,20 @@
                     FAQ page or arrange a callback.</p>
             </div>
             <div class="square register">
-                <form class="float-left text-center" method="POST" action="GSTIN.html" >
+                <form class="text-center" method="POST" action="./GSTIN.html" >
                     <div class="form-group" id="Mob-div">
                         <input class="form-control " id = "num" type="number" name="mobile" required
                             placeholder="Mobile Number" maxlength="10" pattern="(6|7|8|9)\d{9}">
                         <button type="button" id="OTP-button" class="btn btn-secondary" >Send OTP</button>
                     </div>
-                    <div class="form-group"><input class="form-control" type="number" name="mobile" required
+                    <div class="form-group"><input class="form-control" type="number" name="OTP" required
                         placeholder="Enter OTP" maxlength="10" pattern="(6|7|8|9)\d{6}"></div>
                     <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
                     <div class="form-group"><input id="password-field" class="form-control icon-wrapper input" type="password"
                             name="pass" required placeholder="Password"><span toggle="#password-field" onclick="myFunction()"
                             class="ion ion-eye field-icon toggle-password" style="font-size: 22px;"></span></div>
-                    <div class="form-group text-para" style ="padding: 3.5rem 0.5rem 1rem 0.5rem; font-size: medium; text-align: justify;">Password needs to be minimum of 8 characters, with at least 1 lowercase, 1 uppercase, 1 number and 1 special character (!@#$%^&*)
-                    </div>
+                    
                     <div class="form-group"><button class="btn btn-primary btn-block" type="submit"
                         style="background: #000;border-color: #4f4f4f;">Continue</button></div>Already have an
                         account? <u>
