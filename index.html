@@ -132,9 +132,9 @@
                     <div class="form-group" id="Mob-div">
                         <input class="form-control " id = "num" type="number" name="mobile" required
                             placeholder="Mobile Number" maxlength="10" pattern="(6|7|8|9)\d{9}">
-                        <button type="button" id="OTP-button" class="btn btn-secondary" >Send OTP</button>
+                        <button type="button" id="OTP-button" onclick="myFunction_two()" class="btn btn-secondary" >Send OTP</button>
                     </div>
-                    <div class="form-group"><input class="form-control" type="number" name="OTP" required
+                    <div class="form-group"><input class="form-control" type="number" name="OTP" required style="display: none;" id="myDIV"
                         placeholder="Enter OTP" maxlength="10" pattern="(6|7|8|9)\d{6}"></div>
                     <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
@@ -411,7 +411,11 @@
     </div>
     </div>
     </div>
-    
+    <script>
+        $("#OTP-button").click(function() {
+            $("#Enter-1").hide();
+        });
+    </script>
     
     <script src="js/resp.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>

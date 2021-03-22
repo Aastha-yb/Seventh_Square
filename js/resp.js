@@ -17,3 +17,9 @@ function myFunction() {
         x.type = "password";
     }
 }
+
+function myFunction_two() {
+    var x = document.getElementById("myDIV");
+        x.style.display = "block";
+    
+}
