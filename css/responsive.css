@@ -5,22 +5,19 @@
         flex-direction: column;
         transition: all 0.3s ease-out;
     }
-    .logoo{
-        margin:0'
+    .logo{
+        margin:0;
     }
     #disp{
         display: flex;
     }
     #disp-opp{
         display: none;
-        /* width: 0;
-        height: 0;
-        padding: 0;
-        margin: 0; */
     }
-    .burger{
+    /* .burger{
         display: block;
-    }
+    } */
+    
     .h-nav-resp{
         height: 72px;
     }
@@ -34,14 +31,9 @@
     .inline{
         flex-direction: column;
     }
-    .box-singlesec{
-        flex-direction: column;
-    }
-    .sqsingle{
+    
+    /* .sqsingle{
         width:80%
-    }
-    /* .fourthSection .inline{
-        flex-direction: column-reverse;
     } */
     .square
     {
@@ -53,32 +45,6 @@
     }
     
 }
-@media (max-width:992px){
-    #login-pic{
-        display: none;
-    }
-}
-
-@media (max-width:767px) {
-    .footer-contacts {
-      margin: 30px 0;
-    }
-    .SingleSec{
-        height: 150vh;
-    }
-    #content-col{
-        padding: 0rem 2rem;
-    }
-    #form-col{
-        padding: 0;
-    }
-    #form-col-det{
-        padding: 0;
-    }
-    #form-style{
-        padding: 0;
-    }
-  }
 
 
 @media only screen and (max-width: 600px) {
@@ -110,21 +76,36 @@
         width: 100% !important;
         padding: 0% 5% !important;
     }
-    
-    Dashboard 
     .dashborder {
         border-right-style: none!important;
     }
     .happyclient {
         width: 70% !important;
     }
-}
-@media (max-width:370px){
-    .SingleSec{
-        height: 200vh;
+    
+    .heading{
+        font-size: 5vh;
     }
-    #content-head{
-        font-size: 1.6rem;
+    .text-head{
+        font-size: 5vh;
+    }
+    .thirdSection .square{
+        padding: 0;
+    }
+    .text-num{
+        font-size: 8vh;
+    }
+    .text-para-big{
+        font-size: 3vh;
+    }
+    #reg-form{
+        margin-top: 20px;
+    }
+}
+
+@media ( max-width:480px){
+    #star-content{
+        margin-top: 0;
     }
 }
 @media only screen and (max-width:567px){
@@ -141,7 +122,5 @@
         height: 40px;
         margin:1rem 0rem 0rem 0rem;
     }
-    .SingleSec{
-        height: 170vh;
-    }
+    
 }
