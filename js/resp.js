@@ -28,8 +28,4 @@ function myFunction_three() {
         x.style.display = "block";
     
 }
-$( document ).ready(function() {
-    $('#jsModal').on('click', function(){
-      $('#myModal').modal()
-    });
-  });
+

@@ -19,7 +19,7 @@
             <div class = "logo" id="disp" style="margin-left:50px"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
             <a class = "v-class-resp options" href="Seller_login.html">Existing Seller? Login</a>
             <div class = "logo v-class-resp options" id="disp-opp"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
-            <a class = "v-class-resp options">Request A Callback</a>
+            <a class = "v-class-resp options" id="myBtn" data-toggle="modal" data-target="#myModal">Request A Callback</a>
             <div id="menuToggle">
                 <input type="checkbox" id="show-menu" onclick="myFunction_three()"/>
               
@@ -30,10 +30,13 @@
               <ul id="menu" style="display: none;">
                 <a href="#"><li>Home</li></a>
                 <a href="Seller_login.html"><li>Existing Seller? Login</li></a>
-                <a href="#"><li>Request A Callback</li></a>
+                <a href="#" id="myBtn" data-toggle="modal" data-target="#myModal"><li>Request A Callback</li></a>
               </ul>
             </div>
     </nav>
+    
+  
+  
 
     <section class="background firstSection">
         <div class="box-main">
@@ -161,6 +164,7 @@
             </div>
         </div>
     </section>
+
 
 <!-------------------------------------------- Footer Starts here -------------------------------------------------->
 
