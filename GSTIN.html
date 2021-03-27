@@ -16,25 +16,28 @@
     <title>GSTIN Verification</title>
 </head>
 <body>
-    <nav class="navbar h-nav-resp" style="position: sticky;justify-content: flex-start;">
-        <div class = "logo" id="disp" style="margin-left:50px"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
-        <a class = "v-class-resp options" href="Seller_login.html">Existing Seller? Login</a>
-        <div class = "logo v-class-resp options" id="disp-opp"><a href="index.html"><img src="img/logo.png" alt = "logo"></a></div>
-        <a class = "v-class-resp options" id="myBtn">Request A Callback</a>
-        <div id="menuToggle">
-            <input type="checkbox" id="show-menu" onclick="myFunction_three()"/>
-          
-          <span></span>
-          <span></span>
-          <span></span>
-          
-          <ul id="menu" style="display: none;">
-            <a href="#"><li>Home</li></a>
-            <a href="Seller_login.html"><li>Existing Seller? Login</li></a>
-            <a href="#" id="myBtn"><li>Request A Callback</li></a>
-          </ul>
+    <header>
+        <div class="head_container">
+             <div class="logo">
+                <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" width="200px" alt="Logo Image">
+            </div>
+            <div class="menu" id="myTopnav">
+                <ul>
+                    <a href="javascript:void(0);" style="font-size:25px; float: right;" class="icon" onclick="openNav()">&#9776;</a>
+                    <li><a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a></li>
+                    <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" class="li__img" width="150px" alt="Logo Image">
+                    <li><a class="v-class-resp options" href="#Callback">Request A Callback</a></li>
+                </ul>
+            </div>
         </div>
-</nav>
+    </header>
+    <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="index.html">Home</a>
+          <a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a>
+          <a class="v-class-resp options" href="#Callback">Request A Callback</a>
+          
+    </div>
     <section class="background SingleSec">
         <div class="row film" style="margin:0px;">
             <div class="col-12 col-md-1"></div>

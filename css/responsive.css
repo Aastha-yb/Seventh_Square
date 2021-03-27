@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1024px)
 {
-    .navbar{
+    /* .navbar{
         height: 220px;
         flex-direction: column;
         transition: all 0.3s ease-out;
@@ -18,13 +18,13 @@
         display: block;
     } */
     
-    .h-nav-resp{
+    /* .h-nav-resp{
         height: 72px;
     }
     .v-class-resp{
       opacity: 0;  
       width: 10%;
-    }
+    }  */
     .box-main{
         max-width: 100%;
     }
