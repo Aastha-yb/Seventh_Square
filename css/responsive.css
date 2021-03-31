@@ -20,6 +20,12 @@
     }
     
 }
+
+@media ( max-width:787px){
+    #user-circle{
+        max-width: 20%;
+    }
+}
 @media only screen and (max-width: 600px) {
     .list-group-item {
         color: white;
@@ -74,13 +80,7 @@
     #reg-form{
         margin-top: 20px;
     }
-}
-
-@media ( max-width:480px){
-    #star-content{
-        margin-top: 0;
-    }
-}
+} 
 @media only screen and (max-width:567px){
     #Mob-div{
         flex-direction: column;
@@ -96,4 +96,25 @@
         margin:1rem 0rem 0rem 0rem;
     }
     
+}
+@media (max-width : 500px)
+{
+    #user-info{
+        flex-direction: column;
+        margin: auto;
+    }
+    #user-loc{
+        padding: 0px;
+        padding-bottom: 10px;
+        text-align: left;
+    }
+}
+
+@media ( max-width:480px){
+    #star-content{
+        margin-top: 0;
+    }
+    #user-circle{
+        max-width: 30%;
+    }
 }
