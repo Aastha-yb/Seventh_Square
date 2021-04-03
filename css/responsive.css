@@ -99,6 +99,9 @@
 }
 @media (max-width : 500px)
 {
+    #user-profile{
+        flex-direction: column;
+    }
     #user-info{
         flex-direction: column;
         margin: auto;
@@ -106,7 +109,13 @@
     #user-loc{
         padding: 0px;
         padding-bottom: 10px;
-        text-align: left;
+        text-align: center;
+    }
+    #user-circle{
+        max-width: 100%;
+    }
+    #user-name{
+        text-align: center;
     }
 }
 
@@ -115,6 +124,6 @@
         margin-top: 0;
     }
     #user-circle{
-        max-width: 30%;
+        max-width: 100%;
     }
 }
