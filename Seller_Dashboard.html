@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Collapsible-sidebar-left-or-right--Content-overlay.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Seller Dashboard</title>
+    <style>
+        .dropdown-menu {
+          left: auto !important;
+          /* right: auto!important; */
+          float: left !important;
+          min-width: 15rem !important;
+        }
+    
+        .dropdown-menu[style] {
+          right: 0 !important;
+          left: auto !important;
+        }
+      </style>
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand shadow topbar static-top" style="background: black;" id="nav-length">
+        <button class="btn btn-default open-sidebar foter-1"
+          style="display: none;font-size: 20px;color: #999;padding-left: 10px;" type="button"><i
+            class="fa fa-navicon"></i></button>
+        <div class="container-fluid"><a href="/"><img src="img/logo.png"
+            height="40px" /></a>
+          <form class="form-inline d-none d-sm-inline-block mr-auto navbar-search" style="margin-left: 100px;width: 30rem;">
+            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search"
+                style="border-radius: 0px;">
+              <div class="input-group-append"><button class="btn btn-light py-0" style="border-radius: 0px;"
+                  type="button"><i class="fas fa-search" style="color: #858796;"></i></button></div>
+            </div>
+          </form>
+    
+          <ul class="nav navbar-nav flex-nowrap ml-auto">
+            <li class="nav-item dropdown no-arrow mx-1">
+                <div class="nav-item dropdown no-arrow">
+                    <a class="nav-link" data-toggle="dropdown"aria-expanded="false" style="font-size: 25px;"><i style="color:white" class="fas fa-bell"></i></a>
+                    <div style="border-radius: 0px;"class="dropdown-menu dropdown-menu-left dropdown-list dropdown-menu-right animated--grow-in">
+                        <h6 class="dropdown-header" style="background-color: #01011e; border: 0px;">notifications</h6>
+                        <a class="d-flex align-items-center dropdown-item"  style = "font-size: 10px;"href="{{notif.l1}}">
+                            <div class="mr-3">
+                                <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
+                                </div>
+                            </div>
+                            <div><span class="small text-gray-500"></span>
+                                <p>{{notif.n1}}</p>
+                            </div>
+                        </a>
+
+                        <a class="d-flex align-items-center dropdown-item"  href="{{notif.l2}}">
+                            <div class="mr-3">
+                                <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
+                                </div>
+                            </div>
+                            <div><span class="small text-gray-500"></span>
+                                <p>{{notif.n2}}</p>
+                            </div>
+                        </a>
+                        <a class="d-flex align-items-center dropdown-item"  href="{{notif.l3}}">
+                            <div class="mr-3">
+                                <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
+                                </div>
+                            </div>
+                            <div><span class="small text-gray-500"></span>
+                                <p>Some fields of your new products are empty</p>
+                                <p>{{notif.n3}}</p>
+                            </div>
+                        </a>
+                        <a class="text-center dropdown-item small text-gray-500" href="/notify_read/">Mark
+                        All Read</a>
+                    </div>                       
+                </div>
+            </li>
+            <div class="d-block topbar-divider" style="margin: auto 0px; color: white;"></div>
+            <li class="nav-item dropdown no-arrow">
+              <div class="nav-item dropdown no-arrow">
+                  <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"><img class="border rounded-circle img-profile"
+                    src="img/human.jpg" style="height: 30px;"></a>
+                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+                    <a class="dropdown-item"href="/Profile/"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout/"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                </div>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+    </nav>
+    <div>
+        <div class="overlay"></div>
+        <div id="sidebar">
+          <div class="sidebar-header text-center">
+            <img src="img/logo.png" height="40px" />
+          </div>
+          <ul>
+            <li> <a href="/"><i class="fa fa-home" style="margin-right: 10px;"></i>Home</a></li>
+            <li><a class="collapsed" data-toggle="collapse" aria-expanded="false" href="#submenu"><i
+                  class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Orders</a>
+              <ul class="list-unstyled collapse" id="submenu" aria-expanded="false">
+                <li> <a href="/coming-soon/"><i class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Current Orders</a>
+                </li>
+                <li> <a href="/coming-soon/"><i class="fas fa-shopping-cart" style="margin-right: 10px;"></i>Past Orders</a></li>
+              </ul>
+            </li>
+            <li><a class="collapsed" data-toggle="collapse" aria-expanded="false" href="#submenu1"><i class="fas fa-box"
+                  style="margin-right: 10px;"></i>Products</a>
+              <ul class="list-unstyled collapse" id="submenu1" aria-expanded="false">
+                <li> <a href="/newproduct/"><i class="fas fa-box" style="margin-right: 10px;"></i>Add New Product</a></li>
+                <li> <a href="/viewproducts/"><i class="fas fa-box" style="margin-right: 10px;"></i>Active Products</a></li>
+              </ul>
+            </li>
+            <li> <a href="/coming-soon/"><i class="fas fa-cash-register" style="margin-right: 10px;"></i>Payment
+                History</a></li>
+            <li> <a href="/coming-soon/"><i class="fas fa-file-signature" style="margin-right: 10px;"></i>Reports &
+                Performance</a></li>
+            <li> <a href="/coming-soon/"><i class="fas fa-comment-alt" style="margin-right: 10px;"></i>Customer Reviews</a></li>
+            <li> <a href="/contact/"><i class="fas fa-headset" style="margin-right: 10px;"></i>Contact Us</a></li>
+            <hr>
+            <li> <a href="/commercial-terms/"><i class="fas fa-book-reader" style="margin-right: 10px;"></i>Commercial
+                Terms</a></li>
+            <li> <a href="/docverify/"><i class="fas fa-clipboard-check"
+                  style="margin-right: 13px; margin-left: 2px;"></i>Document Verification</a></li>
+            <li> <a href="/faqs/general/"><i class="fas fa-question-circle" style="margin-right: 10px;"></i>General
+                FAQ's</a></li>
+            <li> <a href="/policy/"><i class="fas fa-vote-yea" style="margin-right: 7px;"></i>Policies</a></li>
+            <li> <a href="/marketplace/"><i class="fas fa-clipboard-list"
+                  style="margin-right: 13px; margin-left: 2px;"></i>Seller Agreement</a></li>
+            <li> <a href="/guidelines/"><i class="fas fa-book-reader" style="margin-right: 12px;"></i>Seller Guidelines</a>
+            </li>
+            <li> <a href="/terms/"><i class="fas fa-business-time" style="margin-right: 8px;"></i>Terms Of Use</a></li>
+            <hr>
+            <li> <a href="https://www.facebook.com/Seventh-Square-101727191683337/" target="_blank"><i
+                  class="fab fa-facebook-f" style="margin-right: 15px;margin-left: 5px;"></i>Facebook</a></li>
+            <li> <a href="https://www.instagram.com/seventhsquare/" target="_blank"><i class="icon ion-social-instagram"
+                  style="margin-right: 14px;margin-left: 5px;"></i>Instagram</a></li>
+            <li> <a href="https://www.linkedin.com/company/seventh-square" target="_blank"><i class="fab fa-linkedin-in"
+                  style="margin-right: 13px;margin-left: 5px;"></i>LinkedIn</a></li>
+            <li> <a href="https://www.pinterest.com/seventhsq/" target="_blank"><i class="fab fa-pinterest-p"
+                  style="margin-right: 15px;margin-left: 5px;"></i>Pinterest</a></li>
+            <li> <a href="https://twitter.com/SeventhSq/" target="_blank"><i class="fab fa-twitter"
+                  style="margin-right: 13px;margin-left: 5px;"></i>Twitter</a></li>
+          </ul>
+        </div>
+        </div>
+    </div>
+   
+    <div class="d-flex flex-column" id="content-wrapper" style="background: white;">
+        <div id="content">
+            <div class="container-fluid" style="padding: 0px;">
+                
+                <div class="row">
+                    <div class="col d-none d-lg-block" style="max-width: 25%;background: rgb(232,232,232);">
+                        <!-- fixed-content -->
+                        <div class="list-group"
+                            style="margin-left: 25px;margin-top: 10px;border-right: 1px solid rgb(221,221,221);">
+                            
+                            <a href="/"><button class="list-group-item list-group-item-action"
+                                    style="border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;background: transparent;"><i
+                                        class="fa fa-home"
+                                        style="margin-left: 5px;margin-right: 5px;"></i><span>Home</span></button></a>
+                            <button class="list-group-item list-group-item-action border-white accordion expanded"
+                                style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="material-icons"
+                                    style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Orders</span></button>
+                            <div class="panel">
+                                <a href="/coming/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                            class="material-icons"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Current
+                                            Orders</span></button></a>
+                                <a href="/coming/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                            class="material-icons"
+                                            style="margin-left: 5px;margin-right: 5px;font-size: 16px;">shopping_cart</i><span>Past
+                                            Orders</span></button></a>
+                            </div>
+                            <button class="list-group-item list-group-item-action border-white accordion expanded"
+                                style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                    class="icon ion-cube"
+                                    style="margin-left: 5px;margin-right: 5px;"></i><span>Products</span></button>
+                            <div class="panel">
+                                <a href="/newproduct/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                            class="icon ion-cube"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Add new
+                                            Product</span></button></a>
+                                <a href="/viewproducts/"><button
+                                        class="list-group-item list-group-item-action border-white"
+                                        style="background: transparent;border-style: none;padding: 10px 10px 2px 25px;font-size: 14px;"><i
+                                            class="icon ion-cube"
+                                            style="margin-left: 5px;margin-right: 5px;"></i><span>Active
+                                            Products</span></button></a>
+                            </div>
+                            <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="fas fa-cash-register"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Payment
+                                        History</span></button></a>
+                            <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="fas fa-file-signature"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 16px;"></i><span>Reports
+                                        &amp; Performance</span></button></a>
+                            <a href="/coming/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="material-icons"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 17px;">rate_review</i><span>Customer
+                                        Reviews</span></button></a>
+                            <a href="/contact/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="material-icons"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 16px;">contact_mail</i><span>Contact
+                                        Us</span></button></a>
+                            <h6 style="font-weight: 900; padding-top: 20px;">LEGAL</h6>
+                            <hr style="margin: 0px;width: 80%;">
+                            <a href="/docverify/"><button
+                                    class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="icon ion-document-text"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Document
+                                        Verification&nbsp;</span></button></a>
+                            <a href="/faq/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="fas fa-question-circle"
+                                        style="margin-left: 5px;margin-right: 5px;"></i><span>General
+                                        FAQ's</span></button></a>
+                            <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="fas fa-vote-yea"
+                                        style="margin-left: 5px;margin-right: 5px;"></i><span>Policies</span></button></a>
+                            <a href="/marketplace/"><button
+                                    class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 3px 10px 2px 0px;font-size: 14px;"><i
+                                        class="icon ion-document-text"
+                                        style="margin-left: 5px;margin-right: 5px;font-size: 20px;"></i><span>Seller
+                                        Agreement</span></button></a>
+
+                            <a href="/policy/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="fas fa-book-reader"
+                                        style="margin-left: 5px;margin-right: 5px;"></i><span>Seller
+                                        Guidelines</span></button></a>
+
+                            <a href="/terms/"><button class="list-group-item list-group-item-action border-white"
+                                    style="background: transparent;border-style: none;padding: 10px 10px 2px 0px;font-size: 14px;"><i
+                                        class="fas fa-business-time"
+                                        style=" margin-left: 5px; margin-right: 5px;"></i><span>Terms Of
+                                        use</span></button></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col" style="padding-top: 15px;padding-left: 20px;padding-right: 20px">
+                            <div>
+                                <div class="row" style="text-align: center;margin: 0px;">
+                                    <div class="col row" id="user-profile">
+                                        <div class="col" id="user-circle">
+                                            <i class="fas fa-user-circle" style="font-size:6rem;"></i>
+                                        </div> 
+                                        <div class="col row" id = "user-info">
+                                        <div class="col" id="user-name">
+                                            <label class="d-block" style="color: rgb(0,0,0);font-size: 18px;">Aditya Agarwal <br></label>
+                                            <label class="d-block"style="color: rgb(0,0,0);font-size: 18px;">Seventh Square Internet Pvt. Ltd.<br> B2B B2C</label>
+                                        </div> 
+                                        <div class="col" id="user-loc">
+                                            <label class="d-block"style="color: rgb(0,0,0);font-size: 14px;"><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan</label>
+                                            <label class="d-block"
+                                            style="color: rgb(0,0,0);font-size: 14px;"><i class="far fa-calendar"></i> Joined Feb, 2021</label>
+                                    </div>  
+                                    </div>                                       
+                                </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <h4 style="padding: 20px; padding-bottom: 5px;text-align: center;">Categories Serviced</h4>
+                                <hr style ="width: 50%;margin: auto;color: black;background-color: black;border: solid 1px #000;">
+                                <!-- {loca.categories goes here} -->
+                                <div class="row" style="padding: 30px;padding-bottom: 10px; width: 80%; margin: auto;">
+                                    <div class="col" style="text-align: center;">
+                                        <i class="fas fa-truck-pickup" style="font-size:4rem;"></i>
+                                        <p> Ready Mix Concrete</p>
+                                    </div> 
+                                    <div class="col" style="text-align: center;">
+                                        <i class="fas fa-truck-pickup" style="font-size:4rem;"></i>
+                                        <p> Ready Mix Concrete</p>
+                                    </div>                                         
+                                    <div class="col" style="text-align: center;">
+                                        <i class="fas fa-truck-pickup" style="font-size:4rem;"></i>
+                                        <p> Ready Mix Concrete</p>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h4 style="padding: 20px; padding-bottom: 5px;text-align: center;">Contact and Sign-in info</h4>
+                                <hr style ="width: 50%;margin: auto;color: black;background-color: black;border: solid 1px #000;">
+                                <!-- {User personal information goes here} -->
+                                <div class="row" style="padding: 30px; padding-bottom: 10px; width: 80%; margin: auto;">
+                                    <div class="col" style="text-align: center;">
+                                        <p style="padding-bottom: 20px;">
+                                            Address: {user address information}
+                                        </p>
+                                        <p>
+                                            Phone:{user Phone information}
+                                        </p>
+                                    </div>                                       
+                                    <div class="col" style="text-align: center;">
+                                        <p style="padding-bottom: 20px;">
+                                            Email: {user Email information}
+                                        </p>
+                                        <p>
+                                            Password:{user Password information}
+                                        </p>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h4 style="padding: 20px; padding-bottom: 5px;text-align: center;">Company</h4>
+                                <hr style ="width: 50%;margin: auto;color: black;background-color: black;border: solid 1px #000;">
+                                <!-- {Information about comapany goes here} -->
+                                <div class="row" style="padding: 30px;padding-bottom: 10px; width: 80%; margin: auto;">
+                                    <h6 style="text-align: center;"><em> About the Brand:</em></h6>
+                                    <p style="padding-bottom: 5px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique voluptatem fugit magnam nesciunt nisi, culpa libero sunt debitis neque quae voluptatibus ea explicabo aliquid nihil laudantium maxime eveniet. Iste.</p>
+                                    <h6 style="text-align: center;"><em> Pick up Location(s):</em></h6>
+                                    <ul>
+                                        <li style="padding-bottom:10px ;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi rem molestias quas laudantium iste totam illo sapiente est quos corrupti tempore ex nisi minima et voluptatem vel amet, neque nulla?</li>
+                                        <li style="padding-bottom:10px ;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id consequuntur illo labore asperiores repellendus ipsa autem facere quas ad nam, totam corporis nulla nemo harum minus quisquam, provident pariatur. Magni.</li>
+                                    </ul>
+                                    <div class="col"style="text-align: left;">
+                                        <p>GSTIN: XXXXXXXXXXXXXXXXXX</p>
+                                    </div>
+                                    <div class="col" style="text-align: right;">
+                                        <p>PAN: XXXXXXXXXXXXXXXXXX</p>
+                                    </div>
+                                    <p style="text-align: center;">Members : 5</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h4 style="padding: 20px; padding-bottom: 5px;text-align: center;">Payment Details</h4>
+                                <hr style ="width: 50%;margin: auto;color: black;background-color: black;border: solid 1px #000;">
+                                <!-- {Payment/Account Details goes here} -->
+                                <div class="row" style="padding: 30px; padding-bottom: 10px; width: 80%; margin: auto;">
+                                    <div class="col" style="text-align: center;">
+                                        <p style="padding-bottom: 20px;">
+                                            Account Number : 98XXXXXXXXXXXXXX 
+                                        </p>
+                                        <p>
+                                            Account Holder's Name: {{Seventh Square}}
+                                        </p>
+                                    </div>                                       
+                                    <div class="col" style="text-align: center;">
+                                        <p style="padding-bottom: 20px;">
+                                            IFSC : XXXXXXXXXXXXXXXXXXX
+                                        </p>
+                                        <p>
+                                            Branch: {{Branch Name}}
+                                        </p>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr style ="width: 50%;margin: auto;color: black;background-color: black;border: solid 1px #000;">
+                                <!-- {Payment/Account Details goes here} -->
+                                <div class="row" style="padding: 30px; padding-bottom: 10px; width: 80%; margin: auto;">
+                                    <div class="col" style="padding-bottom: 10px;">
+                                        <a href="#" style="text-align: left; color: #1b1b1b;">
+                                            Have a query? Reach out to us.
+                                        </a>
+                                    </div>                                       
+                                    <div class="col" style="text-align: right;padding-bottom: 10px;">
+                                        <a href="#" style="color: #1b1b1b;">
+                                            Deactivate Account
+                                        </a>
+                                    </div>  
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------ Footer Begins here   --------------------------------------------->
+    <div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="myModal" aria-labelledby="basicModal"
+            aria-hidden="true">
+            <table style="height: 100%; width: 100%;">
+                <tbody>
+                    <tr>
+                        <td class="align-middle">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div id="multple-step-form-n" class="container overflow-hidden"
+                                        style="margin-top: 0px;margin-bottom: 10px;">
+                                        <a href="/"><button type="button" class="close" style="font-size: 30px;"><span
+                                                    aria-hidden="true">×</span></button></a>
+                                        <div id="progress-bar-button" class="multisteps-form">
+                                            <div class="row" style="margin-top: 5px;">
+                                                <div class="col-12 col-lg-8 ml-auto mr-auto">
+                                                    <div class="multisteps-form__progress"><a
+                                                            class="btn multisteps-form__progress-btn js-active"
+                                                            role="button" title="User Info"></a><a
+                                                            class="btn multisteps-form__progress-btn" role="button"
+                                                            title="User Info"></a><a
+                                                            class="btn multisteps-form__progress-btn" role="button"
+                                                            title="User Info"></a><a
+                                                            class="btn multisteps-form__progress-btn" role="button"
+                                                            title="User Info"></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="multistep-start-row" class="row">
+                                            <div id="multistep-start-column" class="col-12 m-auto"
+                                                style="height: auto;">
+                                                <form id="main-form myForm" class="multisteps-form__form" method="POST"
+                                                    action="/index1/" enctype="multipart/form-data" style="height: 671px;">
+                                                    {% csrf_token %}
+                                                    <div id="single-form-next"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
+                                                        data-animation="scaleIn">
+                                                        <a href="/"><img src="img/logo-black.png"
+                                                                style="width: 100%; padding: 10%;"></a>
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Tell Us Where To Pick Your Orders From?</h3>
+                                                        <div id="form-content" class="multisteps-form__content"
+                                                            style="margin-top: 10%;">
+                                                            <div id="input-grp-single" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Warehouse/Store
+                                                                            Locations</strong></label><input type="text"
+                                                                        data-role="tagsinput" data-class="label-info"
+                                                                        name="store"
+                                                                        placeholder="Add more addresses here">
+                                                                </div>
+                                                            </div>
+                                                            <div id="next-button" class="button-row d-flex mt-4"><button
+                                                                    class="btn ml-auto js-btn-next" type="button"
+                                                                    title="Next"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-right js-btn-next"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="single-form-next-prev"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                        data-animation="scaleIn">
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Get Money Directly In Your Bank Account</h3>
+                                                        <div id="form-content-1" class="multisteps-form__content">
+                                                            <div id="input-grp-single-1" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Account
+                                                                            Holder
+                                                                            Name</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="accname" type="text" placeholder="Name">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-single-1" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Account
+                                                                            Number</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="accno" type="text" placeholder="Number">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-single-1" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>IFSC
+                                                                            Code</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="accifsc" type="text" placeholder="Code">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-double-1" class="form-row mt-4">
+                                                                <div class="col-12 col-sm-6"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Bank
+                                                                            Name</strong></label>
+                                                                    <select class="form-control multisteps-form__input"
+                                                                        name="bname" id="options"
+                                                                        style="width:100%; height:35px;color: gray;">
+                                                                        <option value="" disabled selected>
+                                                                            Select Bank
+                                                                        </option>
+                                                                        <option value="Airtel Payments Bank Ltd">
+                                                                            Airtel Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="American Express Banking Corp.">
+                                                                            American Express Banking
+                                                                            Corp.</option>
+                                                                        <option value="Au Small Finance Bank Ltd.">
+                                                                            Au Small Finance Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Axis Bank Ltd. ">
+                                                                            Axis Bank Ltd. </option>
+                                                                        <option value="Bandhan Bank Ltd. ">
+                                                                            Bandhan Bank Ltd. </option>
+                                                                        <option value="Bank of Baroda">
+                                                                            Bank of Baroda</option>
+                                                                        <option value="Bank of India">
+                                                                            Bank of India</option>
+                                                                        <option value="Bank of Maharashtra">
+                                                                            Bank of Maharashtra</option>
+                                                                        <option value="Barclays PLC">
+                                                                            Barclays PLC</option>
+                                                                        <option value="BNP Paribas">BNP
+                                                                            Paribas</option>
+                                                                        <option value="Canara Bank">
+                                                                            Canara Bank</option>
+                                                                        <option value="Capital Small Finance Bank Ltd">
+                                                                            Capital Small Finance Bank
+                                                                            Ltd</option>
+                                                                        <option value="Central Bank of India">
+                                                                            Central Bank of India
+                                                                        </option>
+                                                                        <option value="CitiBank">
+                                                                            CitiBank</option>
+                                                                        <option value="City Union Bank Ltd.">
+                                                                            City Union Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Credit Suisse A.G">
+                                                                            Credit Suisse A.G</option>
+                                                                        <option value="CSB Bank Limited">CSB
+                                                                            Bank Limited</option>
+                                                                        <option value="DCB Bank Ltd.">
+                                                                            DCB Bank Ltd.</option>
+                                                                        <option value="Deutsche Bank">
+                                                                            Deutsche Bank</option>
+                                                                        <option value="Dhanlaxmi Bank Ltd.">
+                                                                            Dhanlaxmi Bank Ltd.</option>
+                                                                        <option value="Equitas Small Finance Bank Ltd">
+                                                                            Equitas Small Finance Bank
+                                                                            Ltd</option>
+                                                                        <option value="ESAF Small Finance Bank Ltd.">
+                                                                            ESAF Small Finance Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Federal Bank Ltd.">
+                                                                            Federal Bank Ltd.</option>
+                                                                        <option value="Fincare Small Finance Bank Ltd.">
+                                                                            Fincare Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="FINO Payments Bank Ltd">
+                                                                            FINO Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="HDFC Bank Ltd">
+                                                                            HDFC Bank Ltd</option>
+                                                                        <option value="HSBC Ltd.">HSBC
+                                                                            Ltd.</option>
+                                                                        <option value="ICICI Bank Ltd.">
+                                                                            ICICI Bank Ltd.</option>
+                                                                        <option value="IDBI Bank Limited">
+                                                                            IDBI Bank Limited</option>
+                                                                        <option value="IDFC FIRST Bank Limited">
+                                                                            IDFC FIRST Bank Limited
+                                                                        </option>
+                                                                        <option value="India Post Payments Bank Ltd">
+                                                                            India Post Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="Indian Bank">
+                                                                            Indian Bank</option>
+                                                                        <option value="Indian Overseas Bank">
+                                                                            Indian Overseas Bank
+                                                                        </option>
+                                                                        <option value="IndusInd Bank Ltd">
+                                                                            IndusInd Bank Ltd</option>
+                                                                        <option value="Jammu & Kashmir Bank Ltd.">
+                                                                            Jammu & Kashmir Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Jana Small Finance Bank Ltd">
+                                                                            Jana Small Finance Bank Ltd
+                                                                        </option>
+                                                                        <option value="Jio Payments Bank Ltd">
+                                                                            Jio Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="Karnataka Bank Ltd.">
+                                                                            Karnataka Bank Ltd.</option>
+                                                                        <option value="Karur Vysya Bank Ltd.">
+                                                                            Karur Vysya Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Kotak Mahindra Bank Ltd">
+                                                                            Kotak Mahindra Bank Ltd
+                                                                        </option>
+                                                                        <option value="Lakshmi Vilas Bank Ltd.">
+                                                                            Lakshmi Vilas Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Nainital bank Ltd.">
+                                                                            Nainital bank Ltd.</option>
+                                                                        <option
+                                                                            value="North East Small finance Bank Ltd">
+                                                                            North East Small finance
+                                                                            Bank Ltd</option>
+                                                                        <option value="NSDL Payments Bank Limited">
+                                                                            NSDL Payments Bank Limited
+                                                                        </option>
+                                                                        <option value="Paytm Payments Bank Ltd">
+                                                                            Paytm Payments Bank Ltd
+                                                                        </option>
+                                                                        <option value="Punjab & Sind Bank">
+                                                                            Punjab & Sind Bank</option>
+                                                                        <option value="Punjab National Bank">
+                                                                            Punjab National Bank
+                                                                        </option>
+                                                                        <option value="RBL Bank Ltd.">
+                                                                            RBL Bank Ltd.</option>
+                                                                        <option value="South Indian Bank Ltd.">
+                                                                            South Indian Bank Ltd.
+                                                                        </option>
+                                                                        <option value="Standard Chartered">
+                                                                            Standard Chartered</option>
+                                                                        <option value="State Bank of India">
+                                                                            State Bank of India</option>
+                                                                        <option
+                                                                            value="Suryoday Small Finance Bank Ltd.">
+                                                                            Suryoday Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="Tamilnad Mercantile Bank Ltd.">
+                                                                            Tamilnad Mercantile Bank
+                                                                            Ltd.</option>
+                                                                        <option value="UCO Bank">UCO
+                                                                            Bank</option>
+                                                                        <option value="Ujjivan Small Finance Bank Ltd.">
+                                                                            Ujjivan Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="Union Bank of India">
+                                                                            Union Bank of India</option>
+                                                                        <option value="Utkarsh Small Finance Bank Ltd.">
+                                                                            Utkarsh Small Finance Bank
+                                                                            Ltd.</option>
+                                                                        <option value="YES Bank Ltd.">
+                                                                            YES Bank Ltd.</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                                                    <label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Branch
+                                                                            Name</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="branch" type="text"
+                                                                        placeholder="Branch Name">
+                                                                </div>
+                                                            </div>
+                                                            <div id="next-prev-buttons" class="button-row d-flex mt-4">
+                                                                <button class="btn js-btn-prev" type="button"
+                                                                    title="Prev"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-left js-btn-prev"></i></button><button
+                                                                    class="btn ml-auto js-btn-next" type="button"
+                                                                    title="Next"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-right js-btn-next"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="single-form-next-prev-1"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                        data-animation="scaleIn">
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Company KYC as mandated by the Government</h3>
+                                                        <div id="form-content-2" class="multisteps-form__content">
+                                                            <div id="input-grp-single-2" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Business
+                                                                            PAN</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="bpan" type="text" placeholder="Enter PAN">
+                                                                </div>
+                                                            </div>
+                                                            <div id="input-grp-single-2" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Corporate
+                                                                            Identity
+                                                                            Number</strong></label><input
+                                                                        name="corporate"
+                                                                        class="form-control multisteps-form__input"
+                                                                        type="text" placeholder="Enter CIN">
+                                                                </div>
+                                                            </div>
+                                                            <div id="next-prev-buttons-1"
+                                                                class="button-row d-flex mt-4"><button
+                                                                    class="btn js-btn-prev" type="button" title="Prev"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-left js-btn-prev"></i></button><button
+                                                                    class="btn ml-auto js-btn-next" type="button"
+                                                                    title="Next"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-right js-btn-next"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="single-form-next-prev-2"
+                                                        class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                        data-animation="scaleIn">
+                                                        <h3 class="text-center multisteps-form__title">
+                                                            Build your brand with us</h3>
+                                                        <div id="form-content-3" class="multisteps-form__content">
+                                                            <div id="input-grp-single-3" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>Company
+                                                                            Logo</strong></label><input
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="logo" type="file" placeholder="Logo"
+                                                                        style="height: auto;"></div>
+                                                            </div>
+                                                            <div id="input-grp-single-3" class="form-row mt-4">
+                                                                <div class="col-12"><label
+                                                                        style="padding-left: 10px;color: gray;font-size: 14px;"><strong>About
+                                                                            Your
+                                                                            Brand</strong></label><textarea
+                                                                        class="form-control multisteps-form__input"
+                                                                        name="brand" placeholder="Describe Your Brand"
+                                                                        style="width: 100%;" rows="10"></textarea></div>
+                                                            </div>
+                                                            <div id="next-prev-buttons-2"
+                                                                class="button-row d-flex mt-4"><button
+                                                                    class="btn js-btn-prev" type="button" title="Prev"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;"><i
+                                                                        class="fa fa-arrow-left js-btn-prev"></i></button><button
+                                                                    class="btn ml-auto" type="button"
+                                                                    onclick="this.closest('form').submit();return false;"
+                                                                    style="background-color: #01013e;border-color: #01013e; color: white;">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!------------------------------------- Footer Begin Here -------------------------->
+    <footer class="foter-1 text-center"
+    style="display: none;  padding: 20px;background: #1b1b1b;">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Know Us
+        </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" href="/about/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">About</a>
+            <a class="btn btn-secondary text-left" role="button" href="/careers/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Careers</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Media</a>
+            <a class="btn btn-secondary text-left" role="button" href="/blog/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Blogs</a>
+            <a class="btn btn-secondary text-left" role="button" href="/forum/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Forum</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Help
+        </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" href="/faqs/general/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">FAQs</a>
+            <a class="btn btn-secondary text-left" role="button" href="/policy/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Policies</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Sitemap</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Shipping & Returns</a>
+            <a class="btn btn-secondary text-left" role="button" href="/terms/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Terms & Conditions</a>
+            <a class="btn btn-secondary text-left" role="button" href="/contact/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Contact Us</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Services
+        </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Advertising</a>
+            <a class="btn btn-secondary text-left" role="button" href="/corporate/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Bulk Order</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Enquiry</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consulting</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Merchant Assistance</a>
+            <a class="btn btn-secondary text-left" role="button" href="/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Seller Registation</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Partner With Us
+        </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Architect</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Builder</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Contractor</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consultant</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Designer</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Product Seller</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="row" style="margin: 10px;">
+    <div class="col"><a href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img
+            class="img-fluid" src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
+    <div class="col"><a href="https://www.instagram.com/seventhsquare/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/instagram.png" /></a></div>
+    <div class="col"><a href="https://www.linkedin.com/company/seventh-square" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/linkedin.png" /></a></div>
+    <div class="col"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
+    <div class="col"><a href="https://twitter.com/SeventhSq/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
+    </div>
+    </footer>
+    <footer class="foter-2"
+    style="padding-top: 50px;padding-bottom: 30px;padding-right: 100px;background: #1b1b1b;padding-left: 100px;">
+    <div class="row">
+    <div class="col-sm-12 col-md-3 footer-navigation" style="padding-right: 20px;">
+        <h3><a href="/"><img class="img-fluid imgage-1" src="img/logo.png"
+            style="padding-left: 30px;padding-right: 30px;"></a></h3>
+        <h6 style="margin-bottom: 12px;padding-top: 10px;font-size: 15px;color:white;">
+        <strong>Registered Office</strong>
+        </h6>
+        <p style="font-size: 13px;color: #999;font-weight: normal;"> 75, Jhotwara Industrial
+        Area, Jaipur, Rajasthan-302012</p>
+        <div class="row" style="margin: 10px;">
+        <div class="col" style="padding: 0px 5px; padding-left: 0px;"><a
+            href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img class="img-fluid"
+                src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.instagram.com/seventhsquare/"
+            target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/instagram.png" /></a>
+        </div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.linkedin.com/company/seventh-square"
+            target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/linkedin.png" /></a>
+        </div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img
+                class="img-fluid" src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://twitter.com/SeventhSq/" target='_blank'><img
+                class="img-fluid" src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px; color:white;"><strong>KNOW US</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/about/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">About
+                us</a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/careers/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Careers<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Media<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/blog/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Blogs<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/forum/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Forum<br></a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>HELP</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/faqs/general/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">FAQs</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/policy/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Policies</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Sitemap<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Shipping
+                & Returns<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/terms/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Terms &
+                Conditions<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/contact/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Contact Us<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>SERVICES</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Advertising</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/corporate/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Bulk
+                Order<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Enquiry<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Consulting<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Merchant
+                Assistance<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Seller
+                Registation<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>PARTNER WITH US</strong>
+        </h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Architect</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Builder</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Contractor<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Consultant<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Designer<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Product
+                Seller<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    </footer>
+    <div style="padding: 12px;background: #01011e;color: rgb(255,255,255);">
+    <div class="row">
+    <div class="col-sm-12 col-md-6 col-xl-8" style="padding-top: 5px;padding-bottom: 5px;text-align: center;">
+        <span style="font-size: 14px;">Copyright © 2021<a href="#">&nbsp;</a>Seventh Square
+        Internet Pvt. Ltd.</span>
+    </div>
+    <div class="col-sm-12 col-md-6 col-xl-4 d-none d-md-block"
+        style="padding: 0px;text-align: center;border-left: 1px solid rgba(255,255,255,0.6) ;">
+        <div><img src="img/p.jpg" style="margin-top: 5px;"></div>
+    </div>
+    </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/resp.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+</body>
+</html>
