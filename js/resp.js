@@ -1,13 +1,3 @@
-// burger = document.querySelector('.burger')
-// navbar = document.querySelector('.navbar')
-// a = document.querySelectorAll('.navbar .options')
-
-// burger.addEventListener('click',()=>{
-//     for (i = 0; i < a.length; i++) {
-//         a[i].classList.toggle('v-class-resp');
-//     }
-//     navbar.classList.toggle('h-nav-resp');
-// })
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
