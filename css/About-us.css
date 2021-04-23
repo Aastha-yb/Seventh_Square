@@ -20,6 +20,53 @@ body{
     width: 100%;
     z-index:10;
 }
+.menu .container {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+ }
+ .menu ul{
+    position: relative;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: flex-end;
+    margin: 0;
+ }
+     
+ .menu .container ul li {
+    display: inline-block;
+    height: 40px;
+    position: relative;
+    margin: 0 20px;
+    padding: 5px 10px;
+ }
+ 
+ .menu .container ul li a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px 5px!important;
+    color: black;
+    position: relative;
+    text-transform: uppercase;
+ }
+ .menu .container ul li a:hover{
+    color: skyblue;
+ }
+ .menu .container ul li.active {
+    background-color: skyblue;
+    transition: 0.3s ease background-color;
+    text-decoration: underline;
+    text-underline-position: under;
+    transition: 0.3s ease background-color;
+ }
+ .menu .container ul li.active a {
+    color:black;
+    text-decoration: underline;
+    text-underline-position: under;
+ }
 .menu .logo{
     color: #111;
     font-size: 24px;
@@ -32,41 +79,7 @@ body{
     width: 80px;
     
 }
-.menu ul{
-    position: relative;
-    display: flex;
-    list-style: none;
-    width: 100%;
-    justify-content: flex-end;
-    margin: 0;
-}
 
-.menu ul li{
-    position: relative;
-    margin: 0 1rem;
-    padding: 1rem;
-}
-.menu ul li.active-a{
-    text-decoration: underline;
-    text-underline-position: under;
-    transition: 0.3s ease background-color;
-}
-.menu ul li.active-a a{
-    color:coral;
-    text-decoration: underline;
-    text-underline-position: under;
-}
-
-.menu ul li a{
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #111;
-}
-
-.menu ul li a:hover{
-    color: skyblue;
-}
 
 .container-other{
     width: 100%;

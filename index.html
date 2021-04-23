@@ -31,13 +31,15 @@
 </head>
 <body onload="slider()">
     <nav class="menu">
-        <ul id="menu">
-            <li class="home active-a"><a href="#home" >Home</a></li>
-            <li class="story"><a href="#story">Our Story</a></li>
-            <li class="products"><a href="#products">Products</a></li>
-            <li class="objectives"><a href="#objectives">Objectives</a></li>
-            <li class="contact"><a href="#contact">Contact Us</a></li>
-        </ul>
+        <div class="container">
+            <ul id="menu">
+                <li class="home active"><a href="#home" >Home</a></li>
+                <li class="story"><a href="#story">Our Story</a></li>
+                <li class="products"><a href="#products">Products</a></li>
+                <li class="objectives"><a href="#objectives">Objectives</a></li>
+                <li class="contact"><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>    
     <div class="container-other">
         
@@ -643,7 +645,28 @@
     <script src="js/jquery.fullpage.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js" integrity="sha512-CWIhArE41HBbJmCKNaI+oHPt8r94Gb+qGty6KUyfl4T8ODsqhoyIm2NjGzV7js1cbvqUfrminjCjxUPLh3Wn7A==" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
-    
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll("ul li");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.classList.contains(current)) {
+
+                    li.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 
 

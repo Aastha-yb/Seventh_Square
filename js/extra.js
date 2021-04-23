@@ -1,22 +1,21 @@
-
-        const sections = document.querySelectorAll('section');
-        const navli = document.querySelectorAll('ul li');
-            window.addEventListener('scroll',()=>{
-            let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if(pageYOffset>sectionTop-sectionHeight/2){
-                    current.section.getAttribute('id');
-                }
-            });
-            navli.foreach( li =>{
-                li.classList.remove('active-a');
-                if(li.classList.contains(current)){
-                    li.classList.add('active-a')
-                }
-            });
-        }) ;
+const sections = document.querySelectorAll('section');
+const navli = document.querySelectorAll('.menu ul li');
+    window.addEventListener('scroll',()=>{
+    let current = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if(pageYOffset>sectionTop-sectionHeight/3){
+            current.section.getAttribute('id');
+        }
+    });
+    navli.foreach( li =>{
+        li.classList.remove('active-a');
+        if(li.classList.contains(current)){
+            li.classList.add('active-a')
+        }
+    });
+}) ;
         // Get all sections that have an ID defined
 
 
