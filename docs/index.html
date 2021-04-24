@@ -1,633 +1,720 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/faq.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Seventh Square Seller</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        .dropdown-menu {
-          left: auto !important;
-          /* right: auto!important; */
-          float: left !important;
-          min-width: 15rem !important;
-        }
-    
-        .dropdown-menu[style] {
-          right: 0 !important;
-          left: auto !important;
-        }
-        .form-row{
-            display:flex;
-            flex-direction: row;
-            margin: 0 !important;
-            padding: 0%;
-        }
-        .form-row button{
-            margin: 0 !important;
-            padding: 0 !important;
-            padding:0px 10.5px!important;
-        }
-      </style>
-</head>
-
-<body onload="slider()">
-    <div class="container-other">
-        <nav class="menu">
-            <div class="container">
-                <ul id="menu">
-                    <li class="home active"><a href="#home">Home</a></li>
-                    <li class="story"><a href="#story">Our Story</a></li>
-                    <li class="products"><a href="#products">Products</a></li>
-                    <li class="objectives"><a href="#objectives">Objectives</a></li>
-                    <li class="contact"><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
-        <section id="home">
-                <nav class="navbar navbar-light navbar-expand shadow topbar static-top" style="z-index:20; background: black; width:100%" id="nav-length">
-                    <button class="btn btn-default open-sidebar foter-1"
-                      style="display: none;font-size: 20px;color: #999;padding-left: 10px;" type="button"><i
-                        class="fa fa-navicon"></i></button>
-                    <div class="container-fluid"><a href="/"><img src="img/logo.png"
-                        height="40px" /></a>
-                      <form class="form-inline d-none d-sm-inline-block mr-auto navbar-search" style="margin-left: 100px;width: 30rem;">
-                        <div class="input-group form-row"><input class="bg-light form-control border-0 small" type="text" placeholder="Search"
-                            style="border-radius: 0px;">
-                          <div class="input-group-append"><button class="btn btn-light py-0" style="border-radius: 0px;"
-                              type="button"><i class="fas fa-search" style="color: #858796;padding: 10.2px 0;      font-size: 15px;"></i></button></div>
-                        </div>
-                      </form>
-                
-                      <ul class="nav navbar-nav flex-nowrap ml-auto">
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <div class="nav-item dropdown no-arrow">
-                                <a class="nav-link" data-toggle="dropdown"aria-expanded="false" style="font-size: 25px; cursor: pointer;">
-                                    <i style="color:white" class="fas fa-bell"></i></a>
-                                <div style="border-radius: 0px;"class="dropdown-menu dropdown-menu-left dropdown-list dropdown-menu-right animated--grow-in">
-                                    <h6 class="dropdown-header" style="background-color: #01011e; border: 0px;">notifications</h6>
-                                    <a class="d-flex align-items-center dropdown-item"  style = "font-size: 10px;"href="{{notif.l1}}">
-                                        <div class="mr-3">
-                                            <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div><span class="small text-gray-500"></span>
-                                            <p>{{notif.n1}}</p>
-                                        </div>
-                                    </a>
-            
-                                    <a class="d-flex align-items-center dropdown-item"  href="{{notif.l2}}">
-                                        <div class="mr-3">
-                                            <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div><span class="small text-gray-500"></span>
-                                            <p>{{notif.n2}}</p>
-                                        </div>
-                                    </a>
-                                    <a class="d-flex align-items-center dropdown-item"  href="{{notif.l3}}">
-                                        <div class="mr-3">
-                                            <div class="icon-circle" style="background-color: #01011e;"><i class="fas fa-file-alt text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div><span class="small text-gray-500"></span>
-                                            <p>Some fields of your new products are empty</p>
-                                            <p>{{notif.n3}}</p>
-                                        </div>
-                                    </a>
-                                    <a class="text-center dropdown-item small text-gray-500" href="/notify_read/">Mark
-                                    All Read</a>
-                                </div>                       
-                            </div>
-                        </li>
-                        <div class="d-block topbar-divider" style="margin: auto 0px; color: white;"></div>
-                        <li class="nav-item dropdown no-arrow">
-                          <div class="nav-item dropdown no-arrow">
-                              <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
-                                  <img class="border rounded-circle img-profile"
-                                src="img/human.jpg" style="height: 30px;"></a>
-                            <div class="dropdown-menu shadow dropdown-menu-left animated--grow-in" style="float: left; cursor: pointer;">
-                                <a class="dropdown-item"href="/Profile/"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout/"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
-                            </div>
-                          </div>
-                        </li>
-                        
-                      </ul>
-                    </div>
-                </nav>
-                <div class="banner">
-                    <div class="slider">
-                        <img src="img/1.jpg" alt="Background_image" id="slideImg">
-                    </div>
-                    <div class="overlay">
-                        <div class="content">
-                            <h2>Shopping for Construction Material and Interior Products made easy for you.</h2>
-                            <div class="know"> <a href="#story">Know More</a> </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <section id="story">
-                <div id="block">
-                    <div class="story-con">
-                        <h1>Our Story</h1>
-                        <p>Seventh Square came to being at an under-construction building site.
-                            As Builders & Developers, I got to learn this early on -
-                            There are more than 100 different items that are used together to construct an apartment complex or commercial centre. Cement, Bricks, Steel were just the starting. Whenever we would start a project, we would work with many different suppliers for all these products, regularly call for prices, work personally to get each product to the site and inspect the product and then keep track of several different payments. As customers, I wanted better service, which wasn't available in the market. Even if I got good service from one product supplier, the others were too difficult. There was no single point. No single person. No single source. </p><break></break>
-                        <p>
-                            Then I thought of a platform where every Building Material from brick to nail can be bought as easily as buying a book online. I thought of every service missing in our current system and starting building Seventh Square as the perfect platform to buy Construction Materials & Interiors in the country. With service as our focus, we are always constantly evolving our model to offer even better service to both our sellers and our customers</p>
-                    </div>
-                        <svg style="transform: rotate(280deg);width: 50%;" viewBox="0 0 3387 1270">
-                            <path id="planePath" class="planePath" d="M-226 626c439,4 636,-213 934,-225 755,-31 602,769 1334,658 562,-86 668,-698 266,-908 -401,-210 -893,189 -632,630 260,441 747,121 1051,91 360,-36 889,179 889,179" />
-                            <g id="plane">
-                            <polygon class="fil1" points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 " />
-                            <polygon class="fil2" points="199,0 -141,-10 -163,63 -123,9 " />
-                            <polygon class="fil3" points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 " />
-                            <path class="fil4" d="M-87 48l-21 -3 3 8 19 -4 -1 -1zm-26 -16l18 7 -2 -1 32 -7 -29 1 11 -4 -24 -1 -16 -18 10 23zm10 9l13 4 -4 -4 -9 0z" />
-                            <polygon class="fil1" points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 " />
-                            </g>
-                            <!-- Define the motion path animation -->
-                            <animateMotion xlink:href="#plane" dur="7s" repeatCount="indefinite" rotate="auto">
-                            <mpath xlink:href="#planePath" />
-                            </animateMotion> 
-                        </svg>
-                </div>
-        </section>
-        <section id="products">
-            <h1>Our Products</h1>
-            
-            <div class="content">
-                
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/1.png" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Building Materials</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/plumbing.jpg" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Plumbing and Electricals</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/2.png" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Roofing</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/oil.jpg" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Chemicals</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/doors.jpg" alt="">
-                    </div>
-
-                    <div class="textBx">
-                        <h3>Doors and Windows</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/3.png" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Flooring and walls</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/Paint (1).jpg" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Paints and Finishes</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/tools.jpg" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Hardware</h3>
-                    </div>
-                </div>
-                <div class="workBx">
-                    <div class="imgBx">
-                        <img src="img/modular.jpg" alt="">
-                    </div>
-                    <div class="textBx">
-                        <h3>Modular</h3>
-                    </div>
-                </div>
-                <button style="margin: 0.5em auto;" class="btn-2">Start Selling  &#x27F6</button>
-                
-            </div>   
-        </section>
-        <section id="objectives" >
-            <h1 style="margin-top: 2vh;">What we do and how?</h1>
-            <p id="gray">Our aim is to make Material Procurement for Builders, Contractors & Individual Home builders simple and more profitable.  How?</p>
-            <div class="aim-content">
-                <hr class="line">
-                <hr class="line hide-bar">
-            </div>
-            <div class="aim-content">
-                <div class="aim">
-                    
-                    <p>We connect manufacturers to their customers directly. Buy the original product straight from the factory at manufacturer's rate.</p>
-                       
-                </div>
-                <hr class="line hide"> 
-                <div class="aim">
-                    <p>Shop freely with our Liberal Policies including Shipping, Delivery & Return & Payment.</p>
-                    
-                </div>
-            </div>
-            <div class="aim-content">
-                <hr class="line">
-                <hr class="line hide-bar">
-            </div>
-            <div class="aim-content">
-                <div class="aim">
-                    <p>We offer best-in-class Services. Get Delivery, Payment and Invoicing sorted out within a single screen. Not a fan of screens? Call your Relationship Manager with us, they'll take care of everything.</p>
-                </div>
-                <hr class="line hide">  
-                <div class="aim">
-                    <p>We have got every item covered. Builder & Contractors can source every single item for their project from Seventh Square. Single Source of Procurement straight from the manufacturer. </p>
-                </div>
-            </div>
-            <p id="gray">To know more, head over to our <a href="https://seller.seventhsq.com/blog/"><em>Blog</em></a> page </p>
-            
-        </section>
-        
-        <section id = "contact">
-            <h1>Contact Us</h1>
-            <div class="contact-content">
-                <div class="contactInfo">
-                    <h3>Reach Out</h3>
-                    <div class="contactInfoBox">
-                        <div class="box">
-                            <div class="icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="text">
-                                <h3>Address</h3>
-                                <p>75, Jhotwara Industrial Area, Jaipur, Rajasthan-302012</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="text">
-                                <h3>Phone</h3>
-                                <p>+91-9887711126</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="icon">
-                                <i class="far fa-envelope"></i>
-                            </div>
-                            <div class="text">
-                                <h3>Email</h3>
-                                <p>care@seventhsq.com</p>
-                            </div>
-                        </div>
-                        <div class="box-small">
-                            <div class="icon"><a href="https://www.facebook.com/Seventh-Square-101727191683337/"><i class="fab fa-facebook-square"></i></a></div>
-                            <div class="icon"><a href="https://www.instagram.com/seventhsquare/"><i class="fab fa-instagram"></i></a></div>
-                            <div class="icon"><a href="https://www.linkedin.com/company/seventh-square"><i class="fab fa-linkedin"></i></a></div>
-                            <div class="icon"><a href="https://www.pinterest.com/seventhsq/"><i class="fab fa-pinterest-square"></i></a></div>
-                            <div class="icon"><a href="https://twitter.com/SeventhSq/"><i class="fab fa-twitter-square"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="formBx">
-                    <form>
-                        <h3>Message Us</h3>
-                        <input type="text" placeholder="Full Name">
-                        <input type="email" placeholder="Email">
-                        <textarea placeholder="Your Message"></textarea>
-                        <input type="submit" value="Send">
-                    </form>
-                </div>
-            </div>
-            
-        </section>
-        <section id="footer">
-            <footer class="foter-1 text-center"
-                style="display: none;  padding: 20px;background: #1b1b1b;">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
-                        data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Know Us
-                    </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                    data-mdb-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <a class="btn btn-secondary text-left" role="button" href="/about/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">About</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/careers/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Careers</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Media</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/blog/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Blogs</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/forum/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Forum</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
-                        data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Help
-                    </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                    data-mdb-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <a class="btn btn-secondary text-left" role="button" href="/faqs/general/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">FAQs</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/policy/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Policies</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Sitemap</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Shipping & Returns</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/terms/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Terms & Conditions</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/contact/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Contact Us</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
-                        data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Services
-                    </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                    data-mdb-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Advertising</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/corporate/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Bulk Order</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Enquiry</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consulting</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Merchant Assistance</a>
-                        <a class="btn btn-secondary text-left" role="button" href="/"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Seller Registation</a>
-                    </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFour">
-                    <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
-                        data-mdb-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                        Partner With Us
-                    </button>
-                    </h2>
-                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-                    data-mdb-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Architect</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Builder</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Contractor</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consultant</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Designer</a>
-                        <a class="btn btn-secondary text-left" role="button"
-                        style="background: transparent;border-style: none;color: #999999;width: 100%;">Product Seller</a>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="row" style="margin: 10px;">
-                <div class="col"><a href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img
-                        class="img-fluid" src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
-                <div class="col"><a href="https://www.instagram.com/seventhsquare/" target='_blank'><img class="img-fluid"
-                        src="https://seller.seventhsq.com/static/email/instagram.png" /></a></div>
-                <div class="col"><a href="https://www.linkedin.com/company/seventh-square" target='_blank'><img class="img-fluid"
-                        src="https://seller.seventhsq.com/static/email/linkedin.png" /></a></div>
-                <div class="col"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img class="img-fluid"
-                        src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
-                <div class="col"><a href="https://twitter.com/SeventhSq/" target='_blank'><img class="img-fluid"
-                        src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
-                </div>
-            </footer>
-            <footer class="foter-2"
-                style="padding-top: 50px;padding-bottom: 30px;padding-right: 100px;background: #1b1b1b;padding-left: 100px;">
-                <div class="row">
-                <div class="col-sm-12 col-md-3 footer-navigation" style="padding-right: 20px;">
-                    <h3><a href="/"><img class="img-fluid imgage-1" src="img/logo.png"
-                        style="padding-left: 30px;padding-right: 30px;"></a></h3>
-                    <h6 style="margin-bottom: 12px;padding-top: 10px;font-size: 15px;color:white;">
-                    <strong>Registered Office</strong>
-                    </h6>
-                    <p style="font-size: 13px;color: #999;font-weight: normal;"> 75, Jhotwara Industrial
-                    Area, Jaipur, Rajasthan-302012</p>
-                    <div class="row" style="margin: 10px;">
-                    <div class="col" style="padding: 0px 5px; padding-left: 0px;"><a
-                        href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img class="img-fluid"
-                            src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
-                    <div class="col" style="padding: 0px 5px;"><a href="https://www.instagram.com/seventhsquare/"
-                        target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/instagram.png" /></a>
-                    </div>
-                    <div class="col" style="padding: 0px 5px;"><a href="https://www.linkedin.com/company/seventh-square"
-                        target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/linkedin.png" /></a>
-                    </div>
-                    <div class="col" style="padding: 0px 5px;"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img
-                            class="img-fluid" src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
-                    <div class="col" style="padding: 0px 5px;"><a href="https://twitter.com/SeventhSq/" target='_blank'><img
-                            class="img-fluid" src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
-                    </div>
-                </div>
-                <div class="col footer-contacts">
-                    <h5 style="margin-bottom: 20px;font-size: 14px; color:white;"><strong>KNOW US</strong></h5>
-                    <div>
-                    <ul class="list-unstyled">
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/about/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">About
-                            us</a></li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/careers/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Careers<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Media<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/blog/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Blogs<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/forum/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Forum<br></a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="col footer-contacts">
-                    <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>HELP</strong></h5>
-                    <div>
-                    <ul class="list-unstyled">
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/faqs/general/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">FAQs</a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/policy/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Policies</a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Sitemap<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Shipping
-                            & Returns<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/terms/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Terms &
-                            Conditions<br></a></li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/contact/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Contact Us<br></a></li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="col footer-contacts">
-                    <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>SERVICES</strong></h5>
-                    <div>
-                    <ul class="list-unstyled">
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Advertising</a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/corporate/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Bulk
-                            Order<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Enquiry<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
-                            Consulting<br></a></li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Merchant
-                            Assistance<br></a></li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/"
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Seller
-                            Registation<br></a></li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="col footer-contacts">
-                    <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>PARTNER WITH US</strong>
-                    </h5>
-                    <div>
-                    <ul class="list-unstyled">
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Architect</a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Builder</a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Contractor<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
-                            Consultant<br></a>
-                        </li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Interior
-                            Designer<br></a></li>
-                        <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
-                            style="color: #999999;font-weight: normal;font-size: 13px;">Product
-                            Seller<br></a></li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                </div>
-            </footer>
-                <div style="padding: 12px;background: #01011e;width:100%;color: rgb(255,255,255);">
-                <div class="row">
-                <div class="col-sm-12 col-md-6 col-xl-8" style="padding-top: 5px;padding-bottom: 5px;text-align: center;">
-                    <span style="font-size: 14px;">Copyright © 2021<a href="#">&nbsp;</a>Seventh Square
-                    Internet Pvt. Ltd.</span>
-                </div>
-                <div class="col-sm-12 col-md-6 col-xl-4 d-none d-md-block"
-                    style="padding: 0px;text-align: center;border-left: 1px solid rgba(255,255,255,0.6) ;">
-                    <div><img src="img/p.jpg" style="margin-top: 5px;"></div>
-                </div>
-                </div>
-                </div>
-        </section>
-        
-    </div>
-    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.fullpage.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js" integrity="sha512-CWIhArE41HBbJmCKNaI+oHPt8r94Gb+qGty6KUyfl4T8ODsqhoyIm2NjGzV7js1cbvqUfrminjCjxUPLh3Wn7A==" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
+    <title>  Seventh Square Seller</title>
+    <style>
+        
+        
+    </style>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const sections = document.querySelectorAll("section");
-        const navLi = document.querySelectorAll("ul li");
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                    current = section.getAttribute("id");
-                }
-            });
+</head>
+<body>
+  <header>
+    <div class="head_container">
+         <div class="logo">
+            <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" width="200px" alt="Logo Image">
+        </div>
+        <div class="menu" id="myTopnav">
+            <ul>
+                <a href="javascript:void(0);" style="font-size:25px; float: right;" class="icon" onclick="openNav()">&#9776;</a>
+                <li><a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a></li>
+                <img src="https://seller.seventhsq.com/static/img/white%20png%20(1).png" class="li__img" width="150px" alt="Logo Image">
+                <li><a class="v-class-resp options" href="#Callback">Request A Callback</a></li>
+            </ul>
+        </div>
+    </div>
+  </header>
+  <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">Home</a>
+      <a class="v-class-resp options" href="Seller_login.html">Existing Seller? Login</a>
+      <a class="v-class-resp options" href="#Callback">Request A Callback</a>
+      
+  </div>
+  <nav aria-label="breadcrumb" style="font-size: 15px;">
+      <ol class="breadcrumb" style="background-color: #fff;padding: 2px 20px;margin-bottom: 0px!important;">
+        <li class="breadcrumb-item"><a href="../Seller_Homepage.html" style="color:#01011e">Home</a></li>
+        <li class="breadcrumb-item"><a href="" id="last2word" style="color:#01011e">Faqs</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><span id="lastword">General</span></li>
+      </ol>
+  </nav>
 
-            navLi.forEach((li) => {
-                li.classList.remove("active");
-                if (li.classList.contains(current)) {
+  <div style="background-image: url('img/back3.jpg');background-size: cover; background-position-y: 80%;
+  height: 22vh;">
+    <div class="search__container">
+      <div class="search_wrap search_wrap_1">
+        <div class="search_box">
+            <input type="text" class="input" placeholder="Search">
+            <div class="btn btn_common">
+              <i class="fas fa-search"></i>
+            </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div class="row" id="side" style="margin: 0px;">
+    <div class="col-12 col-md-2"></div>
+    <div class="col" style="margin: 0px 20px;">
+      <h1 class="text-center"
+        style="margin: 30px 0px; color: black;font-weight: 700;font-family:'Times New Roman', Times, serif;">General FAQs
+      </h1>
+      <div class="accordion_bk">
+        <div class="mx-auto">
+          <!-- Accordion -->
+          <div id="accordionExample" class="accordion">
+    
+            <!-- Accordion item 1 -->
+            <div class="card">
+              <div id="f1" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span data-toggle="collapse" data-target="#f1-1" aria-expanded="true"
+                    aria-controls="f1-1" class="d-block position-relative text-dark text-uppercase py-2"><strong>1.</strong>
+                    &nbsp;How can I sell on Seventh Square?</span></h6>
+              </div>
+              <div id="f1-1" aria-labelledby="f1" data-parent="#accordionExample" class="collapse show">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">You can register yourself as a Seller on the platform through
+                    seller.seventhsq.com</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 2 -->
+            <div class="card">
+              <div id="f2" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span data-toggle="collapse" data-target="#f2-1" aria-expanded="false"
+                    aria-controls="f2-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>2.</strong>
+                    &nbsp;Why should I sell on Seventh Square?</span></h6>
+              </div>
+              <div id="f2-1" aria-labelledby="f2" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0"><i>“Brand value and Sales are built on Customer Experience now more than
+                      Product or Price.”</i><br>We have focused on creating a fulfilling shopping experience for the
+                    customers whenever they are shopping for their home or workspace.
+                    <br><br><strong>Choices</strong><br>With the help of sellers from across the country, customers now have
+                    more options for the same product than ever. Also, they can shop for the first brick to the last cushion
+                    at a single destination in a single order. This helps them build their space much better at lower
+                    prices. <br><br><strong>Design Room</strong><br>Customers now can see how your products look in their
+                    own background. This will directly increase your sales from our platform given increased customer
+                    satisfaction. This is done using our own software and tech without any costs to you.
+                    <br><br><strong>Installation</strong><br>If you service categories which require installation such as
+                    Kitchen sinks or Bed & Wardrobes, we provide an extra installation service to the customers, which they
+                    can avail on checkout. This does not add up to your costs but helps you provide better customer service.
+                    <br><br><strong>Easy Payment Options</strong><br>We’ve incorporated as many payment options as possible
+                    so that the customer can pay as they prefer. We transfer your funds directly to your bank account,
+                    making it simple for you to receive payments for products sold. <br><br><strong>Seller
+                      Benefits</strong><br>From Easy Shipping to streamlined payment policy, we have made it really easy for
+                    you to expand your business at no extra costs. All you have to do is create an account with us, upload
+                    your products and start selling! With us, you can directly reach customers across the country who are
+                    looking to create their spaces sitting at your office and managing everything on a single screen.
+                    <br><br><strong>Join us today by Registering your business with us! </strong></p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 3 -->
+            <div class="card">
+              <div id="f3" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f3-1"
+                    aria-expanded="false" aria-controls="f3-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>3.</strong>
+                    &nbsp;How does Selling on marketplace like Seventh Square works?</span></h6>
+              </div>
+              <div id="f3-1" aria-labelledby="f3" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">As a marketplace, Seventh Square is an intermediary for sellers and
+                    buyers. Thus, we only act as service providers and all decisions relating to product is with the seller.
+                    <br>As a seller, you first have to upload your products on the marketplace using Seventh Square’s
+                    dedicated seller panel (seller.seventhsq.com). When customers purchase your product on our Website,
+                    you’ll get a notification with all the details. While delivering, you can choose to ship with Seventh
+                    Square or self-ship to the customer’s address. You’ll receive payments directly to your bank account no
+                    matter how the customer chooses to pay. </p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 4 -->
+            <div class="card">
+              <div id="f4" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f4-1"
+                    aria-expanded="false" aria-controls="f4-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>4.</strong>
+                    &nbsp;What products can I sell on Seventh Square?</span></h6>
+              </div>
+              <div id="f4-1" aria-labelledby="f4" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Seventh Square is a specialized marketplace for Home Products. With the
+                    widest range, we virtually cover every aspect of Home Building. Here’s a list of categories to guide you
+                    with us: <br><br>
+                  <ul>
+                    <li>Lighting</li>
+                    <li>Bath & Kitchen </li>
+                    <li>Furniture</li>
+                    <li>Furnishings</li>
+                    <li>Home Décor</li>
+                    <li>Hardware & Improvement </li>
+                    <li>Building Materials</li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 5 -->
+            <div class="card">
+              <div id="f5" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f5-1"
+                    aria-expanded="false" aria-controls="f5-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>5.</strong>
+                    &nbsp;What are the charges related to selling on Seventh Square?</span></h6>
+              </div>
+              <div id="f5-1" aria-labelledby="f5" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Seventh Square has the least overall charges to seller, thus actually
+                    helping you grow your business! <br>SS doesn’t charge any listing or registration fees, rather only when
+                    products are sold. <br>For every product sold, there is a marketplace commission which is charged on the
+                    final price sold to the customer. In addition, there is shipping and processing charge which are
+                    forwarded to respective partners (delivery partner and Payment Gateway). <br>By keeping these simple and
+                    low, we look forward to create a community of sellers, who actually benefit by selling online.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 6 -->
+            <div class="card">
+              <div id="f6" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f6-1"
+                    aria-expanded="false" aria-controls="f6-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>6.</strong>
+                    &nbsp;How much Commission does Seventh Square takes?</span></h6>
+              </div>
+              <div id="f6-1" aria-labelledby="f6" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">We charge the lowest commission in the industry! For Sellers registering
+                    before commercial launch, they are entitled to pay just 5% marketplace commission for the first year.
+                    For Sellers registering after launch, refer to commercial term segment available in policies tab.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 7 -->
+            <div class="card">
+              <div id="f7" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f7-1"
+                    aria-expanded="false" aria-controls="f7-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>7.</strong>
+                    &nbsp;How do I start selling on Seventh Square?</span></h6>
+              </div>
+              <div id="f7-1" aria-labelledby="f7" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">After registering yourself as a seller and filling out the rest of the
+                    required details & documents, you can add products and begin selling. <br>We’ve made the whole process
+                    simple for you. As soon as you register, you’ll see a pop-up/lightbox to fill out rest of the required
+                    information. Filling out there helps you get your account verified sooner and you won’t have to later
+                    figure out how to proceed. <br>We also send emails on your registered email address so you don’t have to
+                    worry about anything.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 8 -->
+            <div class="card">
+              <div id="f8" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f8-1"
+                    aria-expanded="false" aria-controls="f8-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>8.</strong>
+                    &nbsp;What other charges are related to products sold online?</span></h6>
+              </div>
+              <div id="f8-1" aria-labelledby="f8" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Seventh Square has minimal charges. Except marketplace commission, only
+                    shipping and payment charges are deducted from the selling price.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 9 -->
+            <div class="card">
+              <div id="f9" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f9-1"
+                    aria-expanded="false" aria-controls="f9-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>9.</strong>
+                    &nbsp;If I list my products on Seventh Square, will the customers see my name?</span></h6>
+              </div>
+              <div id="f9-1" aria-labelledby="f9" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Yes. Your company name will be visible to the customers on the product
+                    page as well as on the invoice. </p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 10 -->
+            <div class="card">
+              <div id="f10" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f10-1"
+                    aria-expanded="false" aria-controls="f10-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>10.</strong>
+                    &nbsp;Who sets the Price of the products?</span></h6>
+              </div>
+              <div id="f10-1" aria-labelledby="f10" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">As a seller you set the price of the products. As a marketplace, we take
+                    commission on selling price of products sold.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 11 -->
+            <div class="card">
+              <div id="f11" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f11-1"
+                    aria-expanded="false" aria-controls="f11-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>11.</strong>
+                    &nbsp;Can I get help for development of Catalog including Images, Descriptions, etc.?</span></h6>
+              </div>
+              <div id="f11-1" aria-labelledby="f11" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Yes. We’re there to help you with every part of your journey with Seventh
+                    Square. Please reach out on seller@seventhsq.com for the same. We’ll get back within 24 hours. With the
+                    help of our catalog partners, you can have unbeatable listings at the most affordable prices. </p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 12 -->
+            <div class="card">
+              <div id="f12" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f12-1"
+                    aria-expanded="false" aria-controls="f12-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>12.</strong>
+                    &nbsp;How should I price my products for the platform?</span></h6>
+              </div>
+              <div id="f12-1" aria-labelledby="f12" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">As a basic, product price should always be affordable for the customers.
+                    To help with that, we have kept our commissions low without any extra charges, so sellers can sell at
+                    lower prices and still keep their margins. For more clarity, you can use our Price Calculator.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 13 -->
+            <div class="card">
+              <div id="f13" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f13-1"
+                    aria-expanded="false" aria-controls="f13-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>13.</strong>
+                    &nbsp;Will the customer see my name when I’m selling on Seventh Square?</span></h6>
+              </div>
+              <div id="f13-1" aria-labelledby="f13" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Yes. We display the company details on the product page. It’s also
+                    mentioned on the invoice that’s sent with the order.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 14 -->
+            <div class="card">
+              <div id="f14" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f14-1"
+                    aria-expanded="false" aria-controls="f14-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>14.</strong>
+                    &nbsp;What is the breakdown of pricing structure of SS?</span></h6>
+              </div>
+              <div id="f14-1" aria-labelledby="f14" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Seventh Square’s marketplace fee includes: <br><br>
+                  <ul>
+                    <li>Marketplace Commission, which is a fixed percentage of the total amount the customer pays. This
+                      percentage is different for different product categories. Please refer to Commercial Term Segment for
+                      detailed commission table. </li>
+                    <li>Payment Processing, is the payment gateway or cash collection charge which is collected on total
+                      product price paid by the customer. It is fixed at 3% of total order amount. </li>
+                    <li>Shipping Charges varies as per product weight. Seventh Square has a fixed rate shipping policy and
+                      offers you a single rate based on product weight. This is only charged on orders shipped with Seventh
+                      Square.</li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 15 -->
+            <div class="card">
+              <div id="f15" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f15-1"
+                    aria-expanded="false" aria-controls="f15-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>15.</strong>
+                    &nbsp;Can I offer services on/to Seventh Square?</span></h6>
+              </div>
+              <div id="f15-1" aria-labelledby="f15" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Yes. Seventh Square welcomes partners in the following areas: <br><br>
+                  <ul>
+                    <li>Interior Designing</li>
+                    <li>Interior & Construction Blogging</li>
+                    <li>Cataloguing </li>
+                    <li>Installation services</li>
+                    <li>Packaging Material</li>
+                  </ul>Reach out to our team for any proposal at <u>partners@seventhsq.com</u>.</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 16 -->
+            <div class="card">
+              <div id="f16" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f16-1"
+                    aria-expanded="false" aria-controls="f16-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>16.</strong>
+                    &nbsp;Can customers leave feedback or reviews?</span></h6>
+              </div>
+              <div id="f16-1" aria-labelledby="f16" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">Yes. Customers can rate and review your products. </p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Accordion item 17 -->
+            <div class="card">
+              <div id="f17" class="card-header bg-grey shadow-sm">
+                <h6 class="mb-0 font-weight-bold"><span href="#" data-toggle="collapse" data-target="#f17-1"
+                    aria-expanded="false" aria-controls="f17-1"
+                    class="d-block position-relative collapsed text-dark text-uppercase py-2"><strong>17.</strong>
+                    &nbsp;If any issue, how do I reach out to SS?</span></h6>
+              </div>
+              <div id="f17-1" aria-labelledby="f17" data-parent="#accordionExample" class="collapse">
+                <div class="card-body p-3">
+                  <p class="font-weight-light m-0">You can reach out to us at seller@seventhsq.com or call/text us at
+                    +91-9887711126. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="faq-shipping.html" id="back-to-prev" title="Back to top" class="foter-1" style="display: none;"><i class="fa fa-angle-left"></i></a>
+      <div class="col-md-3 foter-2" style="margin-top: 50px;border-left: 1px solid rgb(222,222,222) ;">
+        <h5 style="margin-bottom: 30px;font-weight: 500;">Explore More Topics</h5>
+        <a href="index.html">
+          <div style="padding: 5px 20px;color: white !important;background-color: #01011e;"><i class="fas fa-question-circle icon"></i><strong>General FAQs</strong>
+          </div>
+        </a>
+        <a href="faq-account.html">
+          <div style="padding: 10px 25px;color: black;"><i class="far fa-user icon"></i><strong>Account FAQs</strong></div>
+        </a>
+        <a href="faq-advertising.html">
+          <div style="padding: 10px 25px;color: black;"><i class="fas fa-bullhorn icon"></i><strong>Advertising FAQs</strong></div>
+        </a>
+        <a href="faq-orders.html">
+          <div style="padding: 10px 25px;color: black;"><i class="fas fa-shopping-basket icon"></i><strong>Orders FAQs</strong></div>
+        </a>
+        <a href="faq-dashboard.html">
+          <div style="padding: 10px 25px;color: black;"><i class="fas fa-th icon"></i><strong>Dashboard FAQs</strong></div>
+        </a>
+        <a href="faq-pricing.html">
+          <div style="padding: 10px 25px;color: black;"><i class="far fa-credit-card icon"></i><strong>Pricing & Payments FAQs</strong></div>
+        </a>
+        <a href="faq-policies.html">
+          <div style="padding: 10px 25px;color: black;"><i class="far fa-file-alt icon"></i><strong>Policies FAQs</strong></div>
+        </a>
+        <a href="faq-registration.html">
+          <div style="padding: 10px 25px;color: black;"><i class="fas fa-user-plus icon"></i><strong>Registration FAQs</strong></div>
+        </a>
+        <a href="faqs-shipping.html">
+          <div style="padding: 10px 25px;color: black;"><i class="fas fa-exchange-alt icon"></i><strong>Shipping & Returns FAQs</strong></div>
+        </a>
+        
+        <a href="pricecalculator.html">
+          <div style="padding: 10px 25px;color: black;"><i class="fas fa-calculator icon"></i><strong>Price Calculator</strong></div>
+        </a>
+        <!-- <div style="padding: 10px 25px;color: black;"><strong>Account FAQs</strong></div> -->
+      </div>
+    </div>
 
-                    li.classList.add("active");
-                }
-            });
-        });
-    </script>
+
+ 
+      
+<!-------------------------------------------Footer Begins Here--------------------------------------------------->
+<footer class="foter-1 text-center"
+    style="display: none; margin-top: 30px !important; padding: 20px;background: #1b1b1b;">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Know Us
+        </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" href="/about/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">About</a>
+            <a class="btn btn-secondary text-left" role="button" href="/careers/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Careers</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Media</a>
+            <a class="btn btn-secondary text-left" role="button" href="/blog/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Blogs</a>
+            <a class="btn btn-secondary text-left" role="button" href="/forum/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Forum</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Help
+        </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button" href="/faqs/general/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">FAQs</a>
+            <a class="btn btn-secondary text-left" role="button" href="/policy/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Policies</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Sitemap</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Shipping & Returns</a>
+            <a class="btn btn-secondary text-left" role="button" href="/terms/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Terms & Conditions</a>
+            <a class="btn btn-secondary text-left" role="button" href="/contact/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Contact Us</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Services
+        </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Advertising</a>
+            <a class="btn btn-secondary text-left" role="button" href="/corporate/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Bulk Order</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Enquiry</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consulting</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Merchant Assistance</a>
+            <a class="btn btn-secondary text-left" role="button" href="/"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Seller Registation</a>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" style="color: white;"
+            data-mdb-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Partner With Us
+        </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+        data-mdb-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Architect</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Builder</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Contractor</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Consultant</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Interior Designer</a>
+            <a class="btn btn-secondary text-left" role="button"
+            style="background: transparent;border-style: none;color: #999999;width: 100%;">Product Seller</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="row" style="margin: 10px;">
+    <div class="col"><a href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img
+            class="img-fluid" src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
+    <div class="col"><a href="https://www.instagram.com/seventhsquare/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/instagram.png" /></a></div>
+    <div class="col"><a href="https://www.linkedin.com/company/seventh-square" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/linkedin.png" /></a></div>
+    <div class="col"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
+    <div class="col"><a href="https://twitter.com/SeventhSq/" target='_blank'><img class="img-fluid"
+            src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
+    </div>
+    </footer>
+    <footer class="foter-2"
+    style="padding-top: 50px;padding-bottom: 30px;padding-right: 100px;background: #1b1b1b;padding-left: 100px;">
+    <div class="row">
+    <div class="col-sm-12 col-md-3 footer-navigation" style="padding-right: 20px;">
+        <h3><a href="/"><img class="img-fluid imgage-1" src="img/logo.png"
+            style="padding-left: 30px;padding-right: 30px;"></a></h3>
+        <h6 style="margin-bottom: 12px;padding-top: 10px;font-size: 15px;color:white;">
+        <strong>Registered Office</strong>
+        </h6>
+        <p style="font-size: 13px;color: #999;font-weight: normal;"> 75, Jhotwara Industrial
+        Area, Jaipur, Rajasthan-302012</p>
+        <div class="row" style="margin: 10px;">
+        <div class="col" style="padding: 0px 5px; padding-left: 0px;"><a
+            href="https://www.facebook.com/Seventh-Square-101727191683337/" target='_blank'><img class="img-fluid"
+                src="https://seller.seventhsq.com/static/email/facebook.png" /></a></div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.instagram.com/seventhsquare/"
+            target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/instagram.png" /></a>
+        </div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.linkedin.com/company/seventh-square"
+            target='_blank'><img class="img-fluid" src="https://seller.seventhsq.com/static/email/linkedin.png" /></a>
+        </div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://www.pinterest.com/seventhsq/" target='_blank'><img
+                class="img-fluid" src="https://seller.seventhsq.com/static/email/pinterest.png" /></a></div>
+        <div class="col" style="padding: 0px 5px;"><a href="https://twitter.com/SeventhSq/" target='_blank'><img
+                class="img-fluid" src="https://seller.seventhsq.com/static/email/twitter.png" /></a></div>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px; color:white;"><strong>KNOW US</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/about/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">About
+                us</a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/careers/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Careers<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Media<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/blog/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Blogs<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/forum/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Forum<br></a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>HELP</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/faqs/general/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">FAQs</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/policy/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Policies</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Sitemap<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Shipping
+                & Returns<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/terms/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Terms &
+                Conditions<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/contact/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Contact Us<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>SERVICES</strong></h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Advertising</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/corporate/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Bulk
+                Order<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Enquiry<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Consulting<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Merchant
+                Assistance<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a href="/"
+                style="color: #999999;font-weight: normal;font-size: 13px;">Seller
+                Registation<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="col footer-contacts">
+        <h5 style="margin-bottom: 20px;font-size: 14px;color:white;"><strong>PARTNER WITH US</strong>
+        </h5>
+        <div>
+        <ul class="list-unstyled">
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Architect</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Builder</a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Contractor<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Consultant<br></a>
+            </li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Interior
+                Designer<br></a></li>
+            <li style="margin-bottom: 2px;padding-bottom: 10px;"><a
+                style="color: #999999;font-weight: normal;font-size: 13px;">Product
+                Seller<br></a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    </footer>
+    <div style="padding: 12px;background: #01011e;color: rgb(255,255,255);">
+    <div class="row">
+    <div class="col-sm-12 col-md-6 col-xl-8" style="padding-top: 5px;padding-bottom: 5px;text-align: center;">
+        <span style="font-size: 14px;">Copyright © 2021<a href="#">&nbsp;</a>Seventh Square
+        Internet Pvt. Ltd.</span>
+    </div>
+    <div class="col-sm-12 col-md-6 col-xl-4 d-none d-md-block"
+        style="padding: 0px;text-align: center;border-left: 1px solid rgba(255,255,255,0.6) ;">
+        <div><img src="img/p.jpg" style="margin-top: 5px;"></div>
+    </div>
+    </div>
+    </div>
+
+      <script src="js/resp.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 </body>
-
 </html>
