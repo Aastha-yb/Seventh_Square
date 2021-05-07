@@ -8,7 +8,9 @@ body{
     background-color: #e9ecef;
     font-family: 'Lora', serif;
 }
-
+#box{
+    margin: 20px auto;
+}
 .container h1{
     text-align: center;
     width: 90%;
@@ -38,6 +40,8 @@ body{
 
 .tabs .tab-header li{
     display: inline;
+    width: 33%;
+    text-align: center;
 }
 
 .tabs .tab-header li a{
@@ -47,7 +51,7 @@ body{
     font-family: 'Lora', serif;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 15px 55px;
+    padding: 15px 0;
 }
 
 .tabs .tab-header li a.active{
@@ -194,4 +198,76 @@ body{
     display: block;
     width: 90%;
     margin: auto;
+}
+@media(max-width: 1200px){
+    .form-style-2 input.input-field {
+        width: 75%;
+    }
+    .form-style-2 input.input-field.sm {
+        width: 49%;
+    }
+    #tab3 .form-style-2 input.input-field {
+        width: 64%;
+    }
+    #tab3 .form-style-2 input.input-field.sm {
+        width: 54%;
+    }
+} 
+@media(max-width: 992px){
+    .form-style-2 input.input-field {
+        width: 65%;
+    }
+    .form-style-2 input.input-field.sm {
+        width: 100%;
+    }
+    #tab3 .form-style-2 input.input-field {
+        width: 50%;
+    }
+    #tab3 .form-style-2 input.input-field.sm {
+        width: 100%;
+    }
+}
+@media(max-width : 767px){
+    .sidebar{
+        display: none;
+    }
+}
+@media(max-width:576px){
+    #box{
+        width: 90%;
+    }
+}
+@media(max-width:532px){
+    .tabs .tab-header li a {
+        padding: 0;
+    }
+    .form-style-2 input.input-field {
+        width: 100%;
+    }
+    #tab3 .form-style-2 input.input-field {
+        width: 100%;
+    }
+}
+@media(max-width:500px){
+    .container h1{
+        width: 80%;
+        font-size: 28px;
+        margin-top: 5%;
+    }
+    .content-box .content-head {
+        font-size: 25px;
+    }
+    .content-box .content-para {
+        font-size: 20px;
+    }
+    .content-box .links a {
+        font-size: 15px;
+    }
+    .content-box .links {
+        padding: 0 15px;
+    }
+    .tabs .tab-header li a {
+        font-size: 15px;
+    }
+    
 }
