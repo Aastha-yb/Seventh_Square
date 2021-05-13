@@ -107,7 +107,7 @@ body{
     .first .main .col-5 img {
         max-width: 250px;
     }
-
+}
 @media(max-width:700px){
     .first .main .col-7 h3 {
         font-size: 25px;
